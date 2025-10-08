@@ -1560,7 +1560,7 @@
 				},
 				"previousNodeId": "callNode-dc7a4067-d03b-4c09-baf3-8e996827ce55",
 				"agamaData": {
-					"logMessage": "\"New OTP code send successfully!\" otpCode",
+					"logMessage": "\"Resend attempt number: \" resendCount",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -1575,7 +1575,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3199,7 +3199,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
