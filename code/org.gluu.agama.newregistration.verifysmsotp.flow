@@ -1,3 +1,4 @@
+// Start subflow for user otp code validation
 Flow org.gluu.agama.newregistration.verifysmsotp
      Basepath ""
      Timeout 900 seconds
