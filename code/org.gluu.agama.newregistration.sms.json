@@ -1126,14 +1126,15 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "EmailOtpValidationResult = flase"
+					"comment": "EmailOtpValidationResult"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -1152,7 +1153,7 @@
 				"previousNodeId": "assignmentNode-87f22455-cdc3-44e6-a6a1-1117e84a1f48",
 				"agamaData": {
 					"nodeIcon": "material-symbols:event-repeat-outline-rounded",
-					"maxIteration": "4",
+					"maxIteration": "20",
 					"maxIterationVariableName": "EmailMax",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1166,7 +1167,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-397853b0-40ad-4139-ab73-8ce58541e3d8",
@@ -2134,7 +2135,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4477,8 +4478,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1264.6220557354118,
-		"y": -325.3581907773265,
-		"zoom": 0.580754365962861
+		"x": -1381.4683363202118,
+		"y": -513.4529214661447,
+		"zoom": 0.7834971869493407
 	}
 }
