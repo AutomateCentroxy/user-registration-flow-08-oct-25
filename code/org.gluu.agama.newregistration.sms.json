@@ -2373,7 +2373,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-ab298e14-ac6b-4939-83dc-80d645dc29b6",
@@ -2508,7 +2508,18 @@
 				},
 				"previousNodeId": "logNode-356e3f2f-d60e-4e7b-9f26-155aebda86d3",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"This phone is already used by another account. Please enter a different one.\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Please enter a new number\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2521,7 +2532,9 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "callNode-596f77b1-5740-430e-8295-d265003dc029",
@@ -4453,8 +4466,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5816.392610725797,
-		"y": -1531.807961908748,
-		"zoom": 1
+		"x": -5288.432922499405,
+		"y": -1301.8508617513014,
+		"zoom": 0.860949188338904
 	}
 }
