@@ -29,5 +29,10 @@ Repeat __________ times max
                Otherwise
                     Call __________#__________ 
                     Log "@ " __________
+                    When 
+                         Log "@ " __________
+                         Finish __________
+                    Otherwise
+                         Log "@ " __________
 Log "@ " __________
 Finish __________
