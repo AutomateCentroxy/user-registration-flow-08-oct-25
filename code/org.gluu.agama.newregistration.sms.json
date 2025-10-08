@@ -2596,7 +2596,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "triggerNode-aa189a69-9dcf-48e9-8a9b-21f3ac39e3af",
@@ -2615,22 +2615,28 @@
 				"previousNodeId": "logNode-ed510890-26bc-4e98-b906-0977ca9cf63a",
 				"agamaData": {
 					"nodeIcon": "fluent-mdl2:trigger-approval",
-					"flowFileName": "",
-					"arguments": [],
-					"asssignedVariableName": "",
+					"flowFileName": "org.gluu.agama.newregistration.verifysmsotp",
+					"arguments": [
+						"userRegistrationService",
+						"phone",
+						"lang"
+					],
+					"asssignedVariableName": "otpFeedBack",
 					"exceptionVariableField": "",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Launch OTP Subflow",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Launch OTP Subflow",
+					"overrides": []
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-a45cffd6-0c96-443f-a58b-5a559e00b6bc",
