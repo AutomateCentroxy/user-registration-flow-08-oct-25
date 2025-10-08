@@ -62,7 +62,8 @@ Repeat 6 times max
                               resendCount = Call org.gluu.agama.newregistration.CounterHelper#increment resendCount
                               // Log code resend
                               Log "@info Resend attempt number: " resendCount
-                              Call __________#__________ 
+                              // Resend Email otp
+                              otpCode = Call userRegistrationService sendEmail email lang
                               When otpCode is null
                                    Log "@ " __________
                               Log "@ " __________
@@ -152,8 +153,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_xlyyy = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_xlyyy
+                    it_bdrbq = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_bdrbq
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -170,5 +171,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_bigbg = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_bigbg
+it_jylnj = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_jylnj
