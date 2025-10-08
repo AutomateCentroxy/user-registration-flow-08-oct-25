@@ -2359,7 +2359,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-de4a8b33-4ee2-4b81-8bb2-8b0682c0f114",
@@ -3396,7 +3396,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-8db8d922-ea10-422b-8c21-a7e6d28d4021",
@@ -5346,8 +5346,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3618.221860347594,
-		"y": -1213.0696903986852,
-		"zoom": 0.9100388240808991
+		"x": -7147.27150424289,
+		"y": -1701.463938298486,
+		"zoom": 1.0570180405613803
 	}
 }
