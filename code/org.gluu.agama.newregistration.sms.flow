@@ -70,6 +70,8 @@ Repeat 6 times max
                               Log "@info OTP provided by the user " emailOtpCreds
                               // validationAttempts
                               validationAttempts = Call org.gluu.agama.newregistration.CounterHelper#increment validationAttempts
+                              // Add log entry withvalidation result in log file.
+                              Log "@info Validation attempt number: " validationAttempts
                               When 
                                    Log "@ " __________
                                    Finish __________
@@ -144,8 +146,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_pspnp = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_pspnp
+                    it_epmzy = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_epmzy
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -162,5 +164,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dnxng = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dnxng
+it_asaxx = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_asaxx
