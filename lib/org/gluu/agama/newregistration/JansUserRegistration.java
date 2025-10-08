@@ -425,6 +425,7 @@ public class JansUserRegistration extends NewUserRegistration {
 
     public boolean isPhoneUnique(String userName, String phone) {
         try {
+            UserService userService = CdiUtil.bean(UserService.class);
             // Normalize phone number
             String normalizedPhone = phone.startsWith("+") ? phone : "+" + phone;
 
