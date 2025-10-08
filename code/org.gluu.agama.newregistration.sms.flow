@@ -86,7 +86,8 @@ Repeat 6 times max
                                              Log "@info Check phone number for user +++++++:" phone lang
                                              UniqueNumber = Call userRegistrationService isPhoneUnique userName phone
                                              When UniqueNumber is true
-                                                  Call __________#__________ 
+                                                  // sent sms otp
+                                                  smsOtpSend = Call userRegistrationService sendOTPCode phone lang
                                                   Log "@ " __________
                                                   Trigger __________ 
                                                   Log "@ " __________
@@ -122,8 +123,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_wkymr = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_wkymr
+                    it_vqemz = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_vqemz
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -140,5 +141,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dagkg = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dagkg
+it_vojgn = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_vojgn
