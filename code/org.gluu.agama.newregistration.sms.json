@@ -1632,15 +1632,15 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
-							"assignedVariableName": "uiFeedback.errorMessage"
+							"assignmentExpression": "{success: false, error: \"ExceededResendAttempts\"}",
+							"assignedVariableName": "it_emailresend"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "it_emailresend",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -3263,11 +3263,12 @@
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "it_emailresend",
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "it_emailresend",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
@@ -3275,7 +3276,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3583,7 +3584,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		}
 	],
 	"edges": [
@@ -5345,8 +5346,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3905.8513858171136,
-		"y": -1243.1370712238627,
+		"x": -2951.7283544487664,
+		"y": -1196.7722114366213,
 		"zoom": 0.9100388240808991
 	}
 }
