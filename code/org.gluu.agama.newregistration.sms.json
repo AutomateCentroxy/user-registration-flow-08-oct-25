@@ -1393,7 +1393,7 @@
 			"id": "whenNode-99fb3eef-f81e-4f9c-a156-bce0bed2d819",
 			"type": "whenNode",
 			"position": {
-				"x": 3098.02521434722,
+				"x": 3099.301543116049,
 				"y": 1136.4491099011568
 			},
 			"data": {
@@ -1429,7 +1429,8 @@
 				"width": 109,
 				"height": 59
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-95d5719f-dd19-474c-b624-bea62a0a3183",
@@ -3157,7 +3158,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-dc7a4067-d03b-4c09-baf3-8e996827ce55",
@@ -3176,26 +3177,29 @@
 				"previousNodeId": "whenNode-ffb4369f-570c-44c9-8fe3-9ebac299437f",
 				"branching": "continue",
 				"agamaData": {
-					"javaClassName": "",
-					"javaMethodName": "",
+					"javaClassName": "org.gluu.agama.newregistration.CounterHelper",
+					"javaMethodName": "increment",
 					"javaVariableName": "",
 					"exceptionVariableField": "",
 					"callType": "Call static method",
-					"arguments": [],
+					"arguments": [
+						"resendCount"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Increment resend counter",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Increment resend counter",
+					"asssignedVariableName": "resendCount"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3289,7 +3293,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "resendCount",
+							"operator": "is",
+							"dataValue": "3",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -3302,7 +3313,8 @@
 			"measured": {
 				"width": 109,
 				"height": 59
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-fe5adc24-8141-4c9f-a24e-67e32862e000",
@@ -3432,7 +3444,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-6ca0679c-fa70-48e7-8fc4-6dd893741005",
@@ -3463,7 +3476,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
@@ -5291,8 +5305,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2717.7507607000753,
-		"y": -538.3841452401249,
-		"zoom": 0.8145075630702155
+		"x": -3688.9580596971546,
+		"y": -1290.7801372339488,
+		"zoom": 1.0570180405613803
 	}
 }
