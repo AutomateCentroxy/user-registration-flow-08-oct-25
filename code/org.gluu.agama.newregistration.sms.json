@@ -2046,44 +2046,6 @@
 			"selected": false
 		},
 		{
-			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
-			"type": "rrfNode",
-			"position": {
-				"x": 5727.551168912707,
-				"y": 1518.6106882947124
-			},
-			"data": {
-				"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
-				"type": "rrfNode",
-				"position": {
-					"x": 5721.041494806046,
-					"y": 1531.5547556452213
-				},
-				"previousNodeId": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
-				"agamaData": {
-					"assignments": [],
-					"nodeIcon": "ph:globe-simple",
-					"templatePath": "InputMobileNumber.ftlh",
-					"asssignedVariableName": "phoneInput",
-					"nodeColor": "",
-					"titleColor": "",
-					"descColor": "",
-					"displayName": "RRF",
-					"hasComment": true,
-					"comment": " Show UI to collect Mobile number from user.",
-					"arguments": [
-						"uiFeedback"
-					]
-				}
-			},
-			"measured": {
-				"width": 170,
-				"height": 122
-			},
-			"selected": false,
-			"dragging": false
-		},
-		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
 			"type": "finishNode",
 			"position": {
@@ -2121,8 +2083,8 @@
 			"id": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
 			"type": "assignmentNode",
 			"position": {
-				"x": 5983.294648372437,
-				"y": 1500.7420855311073
+				"x": 6339.654543284667,
+				"y": 1893.5640076619031
 			},
 			"data": {
 				"id": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
@@ -2131,7 +2093,7 @@
 					"x": 5977.551168912707,
 					"y": 1518.6106882947124
 				},
-				"previousNodeId": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+				"previousNodeId": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
 				"agamaData": {
 					"assignments": [
 						{
@@ -2158,7 +2120,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -2166,7 +2128,7 @@
 			"type": "assignmentNode",
 			"position": {
 				"x": 5471.041494806046,
-				"y": 1531.5547556452213
+				"y": 1529.0020981075634
 			},
 			"data": {
 				"id": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
@@ -2191,6 +2153,75 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false,
+			"dragging": false
+		},
+		{
+			"id": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
+			"type": "repeatNode",
+			"position": {
+				"x": 5721.041494806046,
+				"y": 1529.0020981075634
+			},
+			"data": {
+				"id": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
+				"type": "repeatNode",
+				"position": {
+					"x": 5721.041494806046,
+					"y": 1529.0020981075634
+				},
+				"previousNodeId": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+				"agamaData": {
+					"nodeIcon": "material-symbols:event-repeat-outline-rounded",
+					"maxIteration": "",
+					"maxIterationVariableName": "",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			}
+		},
+		{
+			"id": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+			"type": "rrfNode",
+			"position": {
+				"x": 5971.041494806046,
+				"y": 1779.0020981075634
+			},
+			"data": {
+				"id": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+				"type": "rrfNode",
+				"position": {
+					"x": 5971.041494806046,
+					"y": 1779.0020981075634
+				},
+				"previousNodeId": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
+				"branching": "repeat",
+				"agamaData": {
+					"assignments": [],
+					"nodeIcon": "ph:globe-simple",
+					"templatePath": "InputMobileNumber.ftlh",
+					"asssignedVariableName": "phoneInput",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "RRF",
+					"hasComment": true,
+					"comment": " Show UI to collect Mobile number from user.",
+					"arguments": "uiFeedback"
 				}
 			},
 			"measured": {
@@ -3221,28 +3252,10 @@
 			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788"
 		},
 		{
-			"source": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
-			"sourceHandle": "source_assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
-			"target": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
-			"targetHandle": "target_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"id": "xy-edge__assignmentNode-f9754949-7a69-46de-8556-c9c89c275050source_assignmentNode-f9754949-7a69-46de-8556-c9c89c275050-rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02target_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02"
-		},
-		{
-			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02-assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"id": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050-repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
 			"type": "default",
-			"source": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
-			"target": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"source": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"target": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
 			"labelBgPadding": [
 				8,
 				4
@@ -3255,12 +3268,49 @@
 				"fillOpacity": 0.7
 			},
 			"labelShowBg": true,
-			"sourceHandle": "source_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02"
+			"sourceHandle": "source_assignmentNode-f9754949-7a69-46de-8556-c9c89c275050"
+		},
+		{
+			"id": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e-rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+			"type": "default",
+			"source": "repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e",
+			"target": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "repeat",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_repeatNode-5fba5aae-4392-4ecc-ab5b-2d30cfc85e5e_repeat"
+		},
+		{
+			"source": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+			"sourceHandle": "source_rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
+			"target": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"targetHandle": "target_assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"id": "xy-edge__rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6esource_rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e-assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831target_assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831"
 		}
 	],
 	"viewport": {
-		"x": -2572.8539851358482,
-		"y": -499.9948613321674,
-		"zoom": 0.5
+		"x": -4077.2829219755185,
+		"y": -1121.5164628734592,
+		"zoom": 0.7834971869493407
 	}
 }
