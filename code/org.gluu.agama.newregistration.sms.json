@@ -2563,7 +2563,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-ed510890-26bc-4e98-b906-0977ca9cf63a",
@@ -2581,21 +2581,22 @@
 				},
 				"previousNodeId": "callNode-596f77b1-5740-430e-8295-d265003dc029",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP generated and send to: \" phone",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "OTP code send",
 					"hasComment": true,
-					"comment": ""
+					"comment": "The OTP Code has been send to user."
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
-			}
+				"width": 168,
+				"height": 120
+			},
+			"selected": true
 		},
 		{
 			"id": "triggerNode-aa189a69-9dcf-48e9-8a9b-21f3ac39e3af",
@@ -4410,8 +4411,8 @@
 		}
 	],
 	"viewport": {
-		"x": -8138.848324927645,
-		"y": -2094.5292989665145,
-		"zoom": 1.161508731925722
+		"x": -5883.205156424733,
+		"y": -1491.2910706464215,
+		"zoom": 0.860949188338904
 	}
 }
