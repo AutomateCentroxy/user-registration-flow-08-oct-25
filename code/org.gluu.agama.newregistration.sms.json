@@ -3413,7 +3413,13 @@
 				},
 				"previousNodeId": "assignmentNode-a1f6af47-2078-4b2f-92d4-8277aeb0d878",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "isResending"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -3505,7 +3511,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
@@ -3557,7 +3563,13 @@
 				},
 				"previousNodeId": "assignmentNode-6ca0679c-fa70-48e7-8fc4-6dd893741005",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "isResending"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -3571,7 +3583,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		}
 	],
 	"edges": [
