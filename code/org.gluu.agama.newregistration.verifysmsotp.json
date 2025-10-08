@@ -894,7 +894,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-2eff6c2b-0b93-4b9d-a7b1-a20d26024f10",
@@ -954,21 +954,22 @@
 				"previousNodeId": "whenNode-5b5a8e2b-3c94-4bf9-a0c9-b7ae11cb9fb2",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Maximum resend attempts exceeded\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "\"Maximum resend attempts exceeded\"",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Maximum resend attempts exceeded\""
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-4e692092-7dae-4d2b-8cf0-8cc4c1a0779e",
@@ -986,20 +987,27 @@
 				},
 				"previousNodeId": "logNode-5787e0c4-5b73-4306-bad6-3aa72583825d",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{success: false, error: \"ExceededResendAttempts\"}",
+							"assignedVariableName": "it_resend"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "ExceededResendAttempts"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "finishNode-c58c1fbf-cab4-4fd9-92dc-89220fb9c927",
@@ -1024,14 +1032,16 @@
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
-					"nodeIcon": "material-symbols:line-end-square-rounded"
+					"returnVariable": "it_resend",
+					"nodeIcon": "material-symbols:line-end-square-rounded",
+					"finishMode": "withVariable"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-4d8d387e-3d50-4c9c-9510-d84527baa76e",
