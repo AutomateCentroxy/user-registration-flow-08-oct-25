@@ -2636,7 +2636,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-a45cffd6-0c96-443f-a58b-5a559e00b6bc",
@@ -2654,21 +2654,22 @@
 				},
 				"previousNodeId": "triggerNode-aa189a69-9dcf-48e9-8a9b-21f3ac39e3af",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP Code validation completed with status: \" otpFeedBack",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log SMS OTP result",
 					"hasComment": true,
-					"comment": ""
+					"comment": "OTP Code validation is completed."
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
-			}
+				"width": 168,
+				"height": 120
+			},
+			"selected": false
 		},
 		{
 			"id": "whenNode-9e87c731-5fe5-42d7-87b4-0fe6cc83abff",
@@ -2689,20 +2690,28 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpFeedBack.success",
+							"operator": "is",
+							"dataValue": "true",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Check if OTP validation vas okay"
 				}
 			},
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-c06fe65f-197a-4ffc-8776-7abaa77afcd3",
@@ -4417,8 +4426,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5883.205156424733,
-		"y": -1491.2910706464215,
+		"x": -6421.205156424733,
+		"y": -1513.2910706464218,
 		"zoom": 0.860949188338904
 	}
 }
