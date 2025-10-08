@@ -1198,7 +1198,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-fd2be8cf-a212-41a5-820c-6402fb644ac1",
@@ -1217,21 +1217,22 @@
 				"previousNodeId": "whenNode-4d8d387e-3d50-4c9c-9510-d84527baa76e",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Fail to resend new code to user. \" resendHasSucceed",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log error code",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Fail to resend new code to user."
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-feba0340-6f3c-4677-9e33-65bcbc3f1e04",
@@ -1249,20 +1250,32 @@
 				},
 				"previousNodeId": "logNode-fd2be8cf-a212-41a5-820c-6402fb644ac1",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
+							"assignedVariableName": "otpUiFeedback.errorMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "otpUiFeedback.infoMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Error occurs while sending new code to you. Please contact site administrator."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-792c5cd2-ddd0-40f3-9d61-5a97907d34e6",
@@ -1280,7 +1293,13 @@
 				},
 				"previousNodeId": "assignmentNode-feba0340-6f3c-4677-9e33-65bcbc3f1e04",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "isResending"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1293,7 +1312,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-982ffa1b-9f10-4a2a-a751-624df09695d8",
