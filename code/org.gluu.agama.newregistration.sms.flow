@@ -39,12 +39,12 @@ Repeat 6 times max
                     // sent Email otp
                     otpCode = Call userRegistrationService sendEmail email lang
                     Log "@info OTP generated and send to: " email
-                    // EmailOtpValidationResult = flase
+                    // EmailOtpValidationResult
                     EmailOtpValidationResult = false
                     uiFeedback.infoMessage = "OTP send to the registered email"
                     resendCount = 0
                     validationAttempts = 0
-                    EmailMax = Repeat 4 times max
+                    EmailMax = Repeat 20 times max
                          // "Email OTP verification loop Started"
                          Log "@info Email OTP verification loop Started"
                          // uiFeedback.email/matches
@@ -135,8 +135,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_xrhrt = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_xrhrt
+                    it_ztcmr = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_ztcmr
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -153,5 +153,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_zlspa = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_zlspa
+it_awkvd = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_awkvd
