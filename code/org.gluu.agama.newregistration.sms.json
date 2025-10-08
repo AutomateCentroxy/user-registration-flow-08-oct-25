@@ -2414,7 +2414,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-de4a8b33-4ee2-4b81-8bb2-8b0682c0f114",
@@ -2435,7 +2435,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "UniqueNumber",
+							"operator": "is",
+							"dataValue": "true",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2448,7 +2455,8 @@
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-356e3f2f-d60e-4e7b-9f26-155aebda86d3",
@@ -2467,21 +2475,22 @@
 				"previousNodeId": "whenNode-de4a8b33-4ee2-4b81-8bb2-8b0682c0f114",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"This phone is already used by another account. Please enter a different one.\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"This phone is already used by another account. Please enter a different one."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-f94cbc42-b86d-4ff1-b936-94b4275e30c4",
