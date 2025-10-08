@@ -2822,7 +2822,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-ae8636c8-316d-401a-b7f2-b6e2516e159d",
@@ -2844,14 +2844,21 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpFeedBack.error",
+							"operator": "is",
+							"dataValue": "\"ExceededTheNumberOfAttemptsAllowed\"",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Check if OTP attempts exceeded"
 				}
 			},
 			"measured": {
@@ -2878,8 +2885,8 @@
 				"previousNodeId": "whenNode-ae8636c8-316d-401a-b7f2-b6e2516e159d",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP validation attempts exceeded\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2890,10 +2897,10 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
+				"width": 168,
+				"height": 120
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -4437,8 +4444,8 @@
 		}
 	],
 	"viewport": {
-		"x": -6728.205156424733,
-		"y": -1456.2910706464213,
+		"x": -6894.205156424733,
+		"y": -1324.2910706464213,
 		"zoom": 0.860949188338904
 	}
 }
