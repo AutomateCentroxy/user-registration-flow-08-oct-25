@@ -12,8 +12,8 @@ maxSMS = Repeat 20 times max
      //  Show UI to collect OTP code from user.
      otpCreds = RRF "smsOtp.ftlh" otpUiFeedback
      When otpCreds.changenumber is "yes"
-          it_kbdjs = {success:false, error: "Your error message here"}
-          Finish it_kbdjs
+          it_sgjjk = {success:false, error: "Your error message here"}
+          Finish it_sgjjk
      Otherwise
           When otpCreds.hasRequestedNewCode is "yes"
                // Log new code request
@@ -38,7 +38,8 @@ maxSMS = Repeat 20 times max
                When validationAttempts is 4
                     // Log validation exceeded
                     Log "@info Maximum validation attempts exceeded"
-                    Finish __________
+                    it_otpmax = { success: false, error: "ExceededTheNumberOfAttemptsAllowed" }
+                    Finish it_otpmax
                Otherwise
                     //  Validate the OTP code provided by the user.
                     otpValidationResult = Call validationAttempts validateOTPCode phone otpCreds.code
