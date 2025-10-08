@@ -488,7 +488,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-7e06cf5d-7117-4355-abb2-f9bc449c8f73",
@@ -576,20 +576,28 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "validationAttempts",
+							"operator": "is",
+							"dataValue": "4",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Check validation"
 				}
 			},
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "callNode-bf43e692-6ee9-44eb-a6c3-e0df2558c1e9",
@@ -2123,8 +2131,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1425,
-		"y": 30,
-		"zoom": 1
+		"x": -2065.94359582599,
+		"y": 286.85179252936496,
+		"zoom": 0.860949188338904
 	}
 }
