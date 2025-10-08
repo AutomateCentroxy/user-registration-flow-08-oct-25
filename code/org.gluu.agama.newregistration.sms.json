@@ -1541,7 +1541,7 @@
 				"width": 109,
 				"height": 59
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3295,9 +3295,9 @@
 					"conditionInputField": "",
 					"conditions": [
 						{
-							"variable": "resendCount",
+							"variable": "otpCode",
 							"operator": "is",
-							"dataValue": "3",
+							"dataValue": "null",
 							"combinator": "none"
 						}
 					],
@@ -3314,7 +3314,7 @@
 				"width": 109,
 				"height": 59
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-fe5adc24-8141-4c9f-a24e-67e32862e000",
