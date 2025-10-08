@@ -2865,7 +2865,7 @@
 				"width": 109,
 				"height": 58
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -2935,7 +2935,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-8bc74f80-314f-4ef5-8b44-f835cb1c8cf0",
@@ -2954,7 +2954,13 @@
 				"previousNodeId": "whenNode-ae8636c8-316d-401a-b7f2-b6e2516e159d",
 				"branching": "continue",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Please try again with a different mobile number.\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2967,7 +2973,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		}
 	],
 	"edges": [
