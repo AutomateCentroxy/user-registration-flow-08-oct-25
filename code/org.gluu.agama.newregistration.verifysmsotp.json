@@ -28,14 +28,14 @@
 					"displayName": "org.gluu.agama.newregistration.verifysmsotp",
 					"creationDate": "08/10/2025",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Start subflow for user otp code validation"
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-1eb0e4ab-a82a-4a7f-9144-c9b135a671aa",
