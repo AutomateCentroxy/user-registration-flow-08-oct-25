@@ -1435,8 +1435,8 @@
 			"id": "logNode-95d5719f-dd19-474c-b624-bea62a0a3183",
 			"type": "logNode",
 			"position": {
-				"x": 3088.5934876317237,
-				"y": 874.5893738227342
+				"x": 3182.2531946575577,
+				"y": 921.892256159014
 			},
 			"data": {
 				"id": "logNode-95d5719f-dd19-474c-b624-bea62a0a3183",
@@ -2933,8 +2933,8 @@
 			"id": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
 			"type": "callNode",
 			"position": {
-				"x": 3338.5934876317237,
-				"y": 874.5893738227342
+				"x": 3365.08310174004,
+				"y": 723.2201503466388
 			},
 			"data": {
 				"id": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
@@ -2967,13 +2967,14 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
 			"type": "whenNode",
 			"position": {
-				"x": 3588.5934876317237,
+				"x": 3838.5934876317237,
 				"y": 932.5893738227342
 			},
 			"data": {
@@ -2983,7 +2984,7 @@
 					"x": 3588.5934876317237,
 					"y": 932.5893738227342
 				},
-				"previousNodeId": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
+				"previousNodeId": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
 				"agamaData": {
 					"variableField": "",
 					"valueField": "",
@@ -3439,6 +3440,40 @@
 				"width": 170,
 				"height": 122
 			}
+		},
+		{
+			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+			"type": "logNode",
+			"position": {
+				"x": 3526.153682947835,
+				"y": 914.3237949852094
+			},
+			"data": {
+				"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+				"type": "logNode",
+				"position": {
+					"x": 3534.6682017683647,
+					"y": 873.6433161760085
+				},
+				"previousNodeId": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
+				"agamaData": {
+					"logMessage": "\"Validation attempt number: \" validationAttempts",
+					"logLevel": "info",
+					"nodeIcon": "octicon:log-16",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "Log validation attempt",
+					"hasComment": true,
+					"comment": "Add log entry withvalidation result in log file."
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "assignmentNode-c37d6cf8-d0b3-4954-ab47-0de1ca7c3d3d",
@@ -4872,25 +4907,6 @@
 			"sourceHandle": "source_logNode-95d5719f-dd19-474c-b624-bea62a0a3183"
 		},
 		{
-			"id": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59-whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
-			"type": "default",
-			"source": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
-			"target": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59"
-		},
-		{
 			"id": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c-logNode-57a88038-e9ee-4518-a115-604eac445ebd",
 			"type": "default",
 			"source": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
@@ -5210,11 +5226,49 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_assignmentNode-6ca0679c-fa70-48e7-8fc4-6dd893741005"
+		},
+		{
+			"id": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59-logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+			"type": "default",
+			"source": "callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59",
+			"target": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_callNode-9d163fdf-e89f-4c57-9917-39c62abdfb59"
+		},
+		{
+			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6-whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
+			"type": "default",
+			"source": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+			"target": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
+			"targetHandle": "target_whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c"
 		}
 	],
 	"viewport": {
-		"x": -3745.911408542961,
-		"y": -1139.9794622225184,
-		"zoom": 1.4260257173641406
+		"x": -3410.551684800123,
+		"y": -612.866495767682,
+		"zoom": 1.0570180405613803
 	}
 }
