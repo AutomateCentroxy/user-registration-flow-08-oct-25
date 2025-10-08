@@ -452,7 +452,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3496,7 +3496,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"\"",
-							"assignedVariableName": "otpUiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -3512,7 +3512,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
@@ -5346,8 +5346,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1794.61408410472,
-		"y": -231.1034986021342,
-		"zoom": 0.5
+		"x": -3618.221860347594,
+		"y": -1213.0696903986852,
+		"zoom": 0.9100388240808991
 	}
 }
