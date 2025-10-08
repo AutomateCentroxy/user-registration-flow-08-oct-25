@@ -40,7 +40,7 @@ public class JansUserRegistration extends NewUserRegistration {
     private static final String LANG = "lang";
     private static final String REFERRAL_CODE = "referralCode";
     private static final String RESIDENCE_COUNTRY = "residenceCountry";
-
+    private static final String PHONE_NUMBER = "mobile";
     private static final String MAIL = "mail";
     private static final String UID = "uid";
     private static final String DISPLAY_NAME = "displayName";
@@ -284,16 +284,15 @@ public class JansUserRegistration extends NewUserRegistration {
             
             String preferredLang = (lang != null && !lang.isEmpty()) ? lang.toLowerCase() : "en";
 
-            
             Map<String, String> messages = new HashMap<>();
-            messages.put("en", "Your Phi Wallet verification code is: " + otpCode);
-            messages.put("fr", "Votre code de vérification Phi Wallet est : " + otpCode);
-            messages.put("pt", "Seu código de verificação Phi Wallet é: " + otpCode);
-            messages.put("es", "Su código de verificación de Phi Wallet es: " + otpCode);
-            messages.put("id", "Kode verifikasi Phi Wallet Anda adalah: " + otpCode);
-            messages.put("ar", "رمز التحقق الخاص بـ Phi Wallet الخاص بك هو: " + otpCode);
 
-            
+            messages.put("ar", "رمز Phi Wallet الخاص بك هو " + otpCode + ". لا تشاركه مع أي شخص.");
+            messages.put("en", "Your Phi Wallet OTP is " + otpCode + ". Do not share it with anyone.");
+            messages.put("es", "Tu código de Phi Wallet es " + otpCode + ". No lo compartas con nadie.");
+            messages.put("fr", "Votre code Phi Wallet est " + otpCode + ". Ne le partagez avec personne.");
+            messages.put("id", "Kode Phi Wallet Anda adalah " + otpCode + ". Jangan bagikan kepada siapa pun.");
+            messages.put("pt", "O seu código da Phi Wallet é " + otpCode + ". Não o partilhe com ninguém.");
+
             String message = messages.getOrDefault(preferredLang, messages.get("en"));
 
             associateGeneratedCodeToPhone(phone, otpCode);
@@ -401,23 +400,61 @@ public class JansUserRegistration extends NewUserRegistration {
         return getSingleValuedAttr(user, INUM_ATTR);
     } 
 
-    public boolean markPhoneAsVerified(String userName) {
+    public String markPhoneAsVerified(String userName, String phone) {
         try {
             UserService userService = CdiUtil.bean(UserService.class);
             User user = getUser(UID, userName);
             if (user == null) {
                 logger.error("User not found for username {}", userName);
-                return false;
+                return "User not found.";
             }
 
             // Just set to true
+            user.setAttribute(PHONE_NUMBER, phone);
             user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
-
+            
             userService.updateUser(user);
             logger.info("Phone verification set to TRUE for UID {}", userName);
-            return true;
+            return "Phone " + phone + " verified successfully for user " + userName;
         } catch (Exception e) {
             logger.error("Error setting phone verified TRUE for UID {}: {}", userName, e.getMessage(), e);
+            return "Error: " + e.getMessage();
+        }
+    }
+
+
+    public boolean isPhoneUnique(String username, String phone) {
+        try {
+            logger.info("=== isPhoneUnique() called for user: {}, phone: {} ===", username, phone);
+
+            // Force CDI bean load here (defensive)
+            UserService userService = CdiUtil.bean(UserService.class);
+            if (userService == null) {
+                logger.error("UserService is NULL in isPhoneUnique()");
+                return false;
+            }
+
+            String normalizedPhone = phone.startsWith("+") ? phone : "+" + phone;
+            logger.info("Normalized phone: {}", normalizedPhone);
+
+            List<User> users = userService.getUsersByAttribute("mobile", normalizedPhone, true, 10);
+            logger.info("LDAP search result: {}", users != null ? users.size() : "NULL");
+
+            if (users != null && !users.isEmpty()) {
+                for (User u : users) {
+                    logger.info("Found user: {}", u.getUserId());
+                    if (!u.getUserId().equalsIgnoreCase(username)) {
+                        logger.info("Phone {} is NOT unique. Already used by {}", phone, u.getUserId());
+                        return false;
+                    }
+                }
+            }
+
+            logger.info("Phone {} is unique", phone);
+            return true;
+
+        } catch (Exception e) {
+            logger.error("Error checking phone uniqueness for {}: {}", phone, e.getMessage(), e);
             return false;
         }
     }
