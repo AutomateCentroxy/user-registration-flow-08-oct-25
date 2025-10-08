@@ -488,7 +488,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-7e06cf5d-7117-4355-abb2-f9bc449c8f73",
@@ -839,7 +839,7 @@
 				"previousNodeId": "whenNode-5b5a8e2b-3c94-4bf9-a0c9-b7ae11cb9fb2",
 				"branching": "continue",
 				"agamaData": {
-					"javaClassName": "org.gluu.agama.newregistaration.CounterHelper",
+					"javaClassName": "org.gluu.agama.newregistration.CounterHelper",
 					"javaMethodName": "increment",
 					"javaVariableName": "",
 					"exceptionVariableField": "",
@@ -861,7 +861,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-3f41ae1e-cd87-4881-9c5b-0a2d21bb4544",
@@ -935,7 +935,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-5787e0c4-5b73-4306-bad6-3aa72583825d",
@@ -2248,8 +2249,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1013.9525157780788,
-		"y": 75.70025761955537,
-		"zoom": 0.860949188338904
+		"x": -853.1680703369802,
+		"y": -197.46288650570858,
+		"zoom": 0.7412335049014176
 	}
 }
