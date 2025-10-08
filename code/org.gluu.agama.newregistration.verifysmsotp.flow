@@ -3,7 +3,8 @@ Flow org.gluu.agama.newregistration.verifysmsotp
      Basepath ""
      Timeout 900 seconds
      Inputs userRegistrationService phone lang
-Log "@ " __________
+// Log flow imputs provided by the flow caller.
+Log "@info Information received from the caller: " phone lang
 Repeat __________ times max
      RRF "__________" 
      When 
