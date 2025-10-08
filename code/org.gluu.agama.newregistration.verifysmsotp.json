@@ -1117,7 +1117,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-2534fb31-a737-48d7-87cc-9b58fb5368e8",
@@ -1135,20 +1135,32 @@
 				},
 				"previousNodeId": "logNode-e756c885-e80c-4928-b623-bbe717d5be72",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"An OTP code has been send to your register mobile number.\"",
+							"assignedVariableName": "otpUiFeedback.infoMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "otpUiFeedback.errorMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"A new OTP code has been send to you on your mobile phone.\""
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-62a85e1d-48e7-40bf-a0b6-70444a4d142f",
@@ -1210,8 +1222,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
