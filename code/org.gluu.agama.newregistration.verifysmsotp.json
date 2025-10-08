@@ -639,7 +639,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-b54f6c19-728a-44d3-a282-77f5700ee5e7",
@@ -887,14 +887,14 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Resend attempt number"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "callNode-2eff6c2b-0b93-4b9d-a7b1-a20d26024f10",
@@ -2190,8 +2190,8 @@
 		}
 	],
 	"viewport": {
-		"x": -966.4396311633138,
-		"y": 204.08327745881604,
-		"zoom": 0.6745512671698494
+		"x": -3727.069655478723,
+		"y": -999.564361788588,
+		"zoom": 1.656341322669091
 	}
 }
