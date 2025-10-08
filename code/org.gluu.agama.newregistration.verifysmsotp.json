@@ -149,7 +149,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-af270cfe-7236-453d-9fc2-9a16c657aa5a",
@@ -168,21 +168,22 @@
 				"previousNodeId": "repeatNode-2282345d-74be-4910-a62a-05075bacdc4b",
 				"branching": "continue",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP verification loop completed\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"OTP verification loop completed\""
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 123
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-86f512c1-8cf6-4d4f-92e6-d00265b0a22a",
