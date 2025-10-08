@@ -77,8 +77,8 @@ Repeat 6 times max
                                    Log "@ " __________
                                    Finish __________
                               Otherwise
-                                   // Add log entry withvalidation result in log file.
-                                   Log "@info OTP validation result is:"
+                                   // "After the validationAttempts loop"
+                                   Log "@info After the validationAttempts loop"
                                    When emailOtpCreds.passcode is otpCode
                                         Log "@info Email Otp Verified"
                                         EmailOtpValidationResult = true
@@ -149,8 +149,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_uppkt = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_uppkt
+                    it_anebx = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_anebx
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -167,5 +167,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_skxvn = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_skxvn
+it_mlyyj = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_mlyyj
