@@ -861,7 +861,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-3f41ae1e-cd87-4881-9c5b-0a2d21bb4544",
@@ -879,8 +879,8 @@
 				},
 				"previousNodeId": "callNode-2a2139f1-573f-4a10-9184-46dfdbd05768",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Resend attempt number: \" resendCount",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
@@ -893,7 +893,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "callNode-2eff6c2b-0b93-4b9d-a7b1-a20d26024f10",
@@ -912,24 +913,29 @@
 				"previousNodeId": "logNode-3f41ae1e-cd87-4881-9c5b-0a2d21bb4544",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendOTPCode",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Resend otp",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Resend otp",
+					"asssignedVariableName": "resendHasSucceed"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-5787e0c4-5b73-4306-bad6-3aa72583825d",
@@ -2184,8 +2190,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1913.5753457268042,
-		"y": -249.16388437338287,
+		"x": -2197.5753457268042,
+		"y": -380.16388437338287,
 		"zoom": 1.0570180405613803
 	}
 }
