@@ -372,7 +372,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false,
 			"dragging": false
@@ -415,7 +415,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false,
 			"dragging": false
@@ -605,7 +605,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false,
 			"dragging": false
@@ -918,7 +918,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false,
 			"dragging": false
@@ -1416,7 +1416,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false
 		},
@@ -1567,7 +1567,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false
 		},
@@ -1754,7 +1754,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false,
 			"dragging": false
@@ -2358,7 +2358,7 @@
 				},
 				"previousNodeId": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
 				"agamaData": {
-					"logMessage": "\"Check phone number for user +++++++:\" phone lang",
+					"logMessage": "\"Check phone number for user +++++++:\" phone  userName",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -2373,7 +2373,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "callNode-ab298e14-ac6b-4939-83dc-80d645dc29b6",
@@ -2454,7 +2454,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false
 		},
@@ -2593,8 +2593,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false
 		},
@@ -2666,8 +2666,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false
 		},
@@ -2709,7 +2709,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false
 		},
@@ -2752,7 +2752,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
 			"selected": false
 		},
@@ -2785,8 +2785,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false
 		},
@@ -2863,9 +2863,9 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 58
+				"height": 59
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2897,8 +2897,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false,
 			"dragging": false
@@ -4453,8 +4453,8 @@
 		}
 	],
 	"viewport": {
-		"x": -6888.205156424733,
-		"y": -1327.2910706464213,
-		"zoom": 0.860949188338904
+		"x": -5816.392610725797,
+		"y": -1531.807961908748,
+		"zoom": 1
 	}
 }
