@@ -1522,9 +1522,9 @@
 					"conditionInputField": "",
 					"conditions": [
 						{
-							"variable": "otpCode",
+							"variable": "resendCount",
 							"operator": "is",
-							"dataValue": "null",
+							"dataValue": "3",
 							"combinator": "none"
 						}
 					],
@@ -1541,7 +1541,7 @@
 				"width": 109,
 				"height": 59
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1575,7 +1575,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -5305,8 +5305,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3688.9580596971546,
-		"y": -1290.7801372339488,
+		"x": -3578.9580596971546,
+		"y": -1300.7801372339488,
 		"zoom": 1.0570180405613803
 	}
 }
