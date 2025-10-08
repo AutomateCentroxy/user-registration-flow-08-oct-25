@@ -2370,8 +2370,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false
 		},
@@ -2490,7 +2490,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-f94cbc42-b86d-4ff1-b936-94b4275e30c4",
@@ -2541,24 +2541,29 @@
 				"branching": "success",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendOTPCode",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "sent sms otp",
 					"hasComment": true,
-					"comment": ""
+					"comment": "sent sms otp",
+					"asssignedVariableName": "smsOtpSend"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-ed510890-26bc-4e98-b906-0977ca9cf63a",
@@ -4405,8 +4410,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5311.398927720769,
-		"y": -1393.0734599217367,
-		"zoom": 0.9100388240808991
+		"x": -8138.848324927645,
+		"y": -2094.5292989665145,
+		"zoom": 1.161508731925722
 	}
 }
