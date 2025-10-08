@@ -116,7 +116,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "repeatNode-2282345d-74be-4910-a62a-05075bacdc4b",
@@ -135,12 +135,12 @@
 				"previousNodeId": "assignmentNode-c147b42c-b37c-4961-b742-2b1c386c0e81",
 				"agamaData": {
 					"nodeIcon": "material-symbols:event-repeat-outline-rounded",
-					"maxIteration": "",
-					"maxIterationVariableName": "",
+					"maxIteration": "20",
+					"maxIterationVariableName": "maxSMS",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Valid sms OTP check",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -148,7 +148,8 @@
 			"measured": {
 				"width": 170,
 				"height": 123
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-af270cfe-7236-453d-9fc2-9a16c657aa5a",
