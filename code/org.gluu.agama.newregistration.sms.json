@@ -2163,7 +2163,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2183,12 +2183,12 @@
 				"previousNodeId": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
 				"agamaData": {
 					"nodeIcon": "material-symbols:event-repeat-outline-rounded",
-					"maxIteration": "",
-					"maxIterationVariableName": "",
+					"maxIteration": "10",
+					"maxIterationVariableName": "ValidMobileNum",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "ValidMobileNum",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2196,7 +2196,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "rrfNode-5b72820b-35ed-4155-bd08-b74ef5da7f6e",
