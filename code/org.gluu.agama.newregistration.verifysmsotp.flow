@@ -2,3 +2,12 @@ Flow org.gluu.agama.newregistration.verifysmsotp
      Basepath ""
      Timeout 900 seconds
      Inputs userRegistrationService phone lang
+Log "@ " __________
+Repeat __________ times max
+     RRF "__________" 
+     When 
+          Finish __________
+     Otherwise
+          When 
+Log "@ " __________
+Finish __________
