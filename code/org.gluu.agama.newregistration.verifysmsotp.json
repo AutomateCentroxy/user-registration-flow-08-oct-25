@@ -521,7 +521,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-1a4834a6-8b4f-431c-8702-cb564da7a15b",
@@ -540,21 +540,22 @@
 				"previousNodeId": "whenNode-015a4a39-50f2-4aff-a1d3-adf8966a7b17",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"User has requested a new code.\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log new code request",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Log new code request"
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-da9424c3-6280-42b7-8e28-10df55e0a2f6",
