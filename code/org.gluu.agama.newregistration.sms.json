@@ -1698,8 +1698,8 @@
 			"id": "logNode-0c47b1c3-9a5d-4269-99bd-63bf49268021",
 			"type": "logNode",
 			"position": {
-				"x": 4319.123194690207,
-				"y": 764.3498904406453
+				"x": 4270.773609116824,
+				"y": 772.0418699636834
 			},
 			"data": {
 				"id": "logNode-0c47b1c3-9a5d-4269-99bd-63bf49268021",
@@ -1806,8 +1806,8 @@
 			"id": "logNode-64776aa5-0153-474b-a3e6-db4379554b50",
 			"type": "logNode",
 			"position": {
-				"x": 4544.124433807731,
-				"y": 501.1407336758024
+				"x": 4384.790572259084,
+				"y": 509.93156741641735
 			},
 			"data": {
 				"id": "logNode-64776aa5-0153-474b-a3e6-db4379554b50",
@@ -1841,8 +1841,8 @@
 			"id": "assignmentNode-83bcd9d9-bf0e-4eb2-bd27-fdce38e10ae8",
 			"type": "assignmentNode",
 			"position": {
-				"x": 4815.282850278268,
-				"y": 451.3193897358585
+				"x": 4695.507740562388,
+				"y": 439.23199334251285
 			},
 			"data": {
 				"id": "assignmentNode-83bcd9d9-bf0e-4eb2-bd27-fdce38e10ae8",
@@ -2989,21 +2989,28 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "validationAttempts",
+							"operator": "is",
+							"dataValue": "4",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Check validation"
 				}
 			},
 			"measured": {
 				"width": 109,
 				"height": 59
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3023,22 +3030,22 @@
 				"previousNodeId": "whenNode-29dda440-5975-42b7-ab7a-aa6920b6719c",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP validation result is:\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log validation result",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Add log entry withvalidation result in log file."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -5269,8 +5276,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1446.556200195465,
-		"y": -27.051841932448838,
-		"zoom": 0.5
+		"x": -3624.420930358009,
+		"y": -620.5131718059347,
+		"zoom": 1.0570180405613803
 	}
 }
