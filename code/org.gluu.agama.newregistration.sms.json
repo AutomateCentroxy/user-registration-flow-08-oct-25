@@ -2711,7 +2711,7 @@
 				"width": 109,
 				"height": 58
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-c06fe65f-197a-4ffc-8776-7abaa77afcd3",
@@ -2733,20 +2733,28 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpFeedBack.error",
+							"operator": "is",
+							"dataValue": "\"ExceededResendAttempts\"",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"ExceededResendAttempts\""
 				}
 			},
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-81e68038-72fd-447e-b23c-76062daada7e",
