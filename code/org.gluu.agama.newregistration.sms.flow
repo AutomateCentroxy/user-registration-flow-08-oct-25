@@ -90,7 +90,8 @@ Repeat 6 times max
                                                   smsOtpSend = Call userRegistrationService sendOTPCode phone lang
                                                   // The OTP Code has been send to user.
                                                   Log "@info OTP generated and send to: " phone
-                                                  Trigger __________ 
+                                                  // Launch OTP Subflow
+                                                  otpFeedBack = Trigger org.gluu.agama.newregistration.verifysmsotp userRegistrationService phone lang
                                                   Log "@ " __________
                                                   When 
                                                        phoneVerified = Call userRegistrationService markPhoneAsVerified userName
@@ -124,8 +125,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_avdpj = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_avdpj
+                    it_gviju = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_gviju
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -142,5 +143,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_bqnsy = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_bqnsy
+it_gqruw = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_gqruw
