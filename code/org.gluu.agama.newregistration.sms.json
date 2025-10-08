@@ -3219,25 +3219,29 @@
 				"previousNodeId": "logNode-fd1000d1-95d7-4b1f-a55f-bee7346d2a9b",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendEmail",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"email",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Resend Email otp",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Resend Email otp",
+					"asssignedVariableName": "otpCode"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3314,7 +3318,7 @@
 				"width": 109,
 				"height": 59
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-fe5adc24-8141-4c9f-a24e-67e32862e000",
@@ -5305,8 +5309,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3578.9580596971546,
-		"y": -1300.7801372339488,
-		"zoom": 1.0570180405613803
+		"x": -3036.8513858171127,
+		"y": -1171.1370712238631,
+		"zoom": 0.9100388240808991
 	}
 }
