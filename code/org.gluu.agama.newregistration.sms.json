@@ -3241,7 +3241,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3337,21 +3337,22 @@
 				"previousNodeId": "whenNode-7d35869e-b99a-409b-8f72-fb2714b935db",
 				"branching": "continue",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"New OTP code send successfully!\" otpCode",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Log code resend"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-a1f6af47-2078-4b2f-92d4-8277aeb0d878",
@@ -3369,20 +3370,32 @@
 				},
 				"previousNodeId": "logNode-fe5adc24-8141-4c9f-a24e-67e32862e000",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"A new OTP code has been send to you on your Email\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "otpUiFeedback.errorMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "A new OTP code has been send to you on your Email"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-8db8d922-ea10-422b-8c21-a7e6d28d4021",
@@ -3434,13 +3447,13 @@
 				"previousNodeId": "whenNode-7d35869e-b99a-409b-8f72-fb2714b935db",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Fail to resend new code to user. \" email",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log error code",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -3467,21 +3480,32 @@
 				},
 				"previousNodeId": "logNode-bb2d5dd1-d498-41ed-b4f3-2b875d2a4e2e",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "otpUiFeedback.infoMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Error occurs while sending new code to you. Please contact site administrator.\""
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
@@ -5309,8 +5333,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3036.8513858171127,
-		"y": -1171.1370712238631,
+		"x": -3905.8513858171136,
+		"y": -1243.1370712238627,
 		"zoom": 0.9100388240808991
 	}
 }
