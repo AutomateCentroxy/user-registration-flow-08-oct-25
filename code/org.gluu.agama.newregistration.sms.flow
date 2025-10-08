@@ -56,8 +56,8 @@ Repeat 6 times max
                               Log "@info User has requested a new code."
                               When resendCount is 3
                                    Log "@info Fail to resend new code to user. " otpCode
-                                   uiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
-                                   Finish __________
+                                   it_emailresend = {success: false, error: "ExceededResendAttempts"}
+                                   Finish it_emailresend
                               // Increment resend counter
                               resendCount = Call org.gluu.agama.newregistration.CounterHelper#increment resendCount
                               // Log code resend
@@ -162,8 +162,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_yvqms = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_yvqms
+                    it_qcrsv = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_qcrsv
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -180,5 +180,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_cuqic = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_cuqic
+it_iyzga = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_iyzga
