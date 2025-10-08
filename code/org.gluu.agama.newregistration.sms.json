@@ -2340,7 +2340,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-30504731-1a15-4db9-a1c1-acb8517aa847",
@@ -2358,21 +2358,22 @@
 				},
 				"previousNodeId": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Check phone number for user +++++++:\" phone lang",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Check phone number for user +++++++:\" phone lang"
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "callNode-ab298e14-ac6b-4939-83dc-80d645dc29b6",
@@ -4390,8 +4391,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4631.398927720769,
-		"y": -1140.0734599217367,
+		"x": -5311.398927720769,
+		"y": -1393.0734599217367,
 		"zoom": 0.9100388240808991
 	}
 }
