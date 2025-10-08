@@ -58,10 +58,13 @@ Repeat 6 times max
                                    Log "@info Fail to resend new code to user. " otpCode
                                    uiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
                                    Finish __________
+                              Call __________#__________ 
                               // Log code resend
                               Log "@info New OTP code send successfully!" otpCode
-                              // Provide feedback about the error message to user.
-                              uiFeedback.infoMessage = "A new OTP code has been send to you on your Email"
+                              Call __________#__________ 
+                              When 
+                                   Log "@ " __________
+                              Log "@ " __________
                          Otherwise
                               // "OTP provided by the user " 
                               Log "@info OTP provided by the user " 
@@ -140,8 +143,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_ympaa = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_ympaa
+                    it_hzzry = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_hzzry
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -158,5 +161,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_zoeff = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_zoeff
+it_mvtdl = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_mvtdl
