@@ -1108,6 +1108,16 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"OTP send to the registered email\"",
 							"assignedVariableName": "uiFeedback.infoMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "0",
+							"assignedVariableName": "resendCount"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "0",
+							"assignedVariableName": "validationAttempts"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1123,7 +1133,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -2533,7 +2543,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4467,8 +4477,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4359.244978088183,
-		"y": -988.381568857804,
-		"zoom": 0.6745512671698494
+		"x": -1033.679314529723,
+		"y": -449.2403337088748,
+		"zoom": 0.7834971869493407
 	}
 }
