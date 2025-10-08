@@ -1,4 +1,4 @@
-package org.gluu.agama.newregistaration;
+package org.gluu.agama.newregistration; 
 
 /**
  * Helper class for counter operations in Agama flows
