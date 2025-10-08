@@ -5,6 +5,9 @@ Flow org.gluu.agama.newregistration.verifysmsotp
      Inputs userRegistrationService phone lang
 // Log flow imputs provided by the flow caller.
 Log "@info Information received from the caller: " phone lang
+otpUiFeedback = {}
+resendCount = 0
+validationAttempts = 0
 Repeat __________ times max
      RRF "__________" 
      When 
