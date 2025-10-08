@@ -1448,7 +1448,7 @@
 				"previousNodeId": "whenNode-99fb3eef-f81e-4f9c-a156-bce0bed2d819",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "\"OTP provided by the user \" ",
+					"logMessage": "\"OTP provided by the user \" emailOtpCreds",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -1463,7 +1463,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3370,7 +3370,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -5210,8 +5210,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3168.66588576711,
-		"y": -866.743492296069,
-		"zoom": 0.7834971869493407
+		"x": -3745.911408542961,
+		"y": -1139.9794622225184,
+		"zoom": 1.4260257173641406
 	}
 }
