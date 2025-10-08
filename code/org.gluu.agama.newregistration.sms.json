@@ -3380,7 +3380,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"\"",
-							"assignedVariableName": "otpUiFeedback.errorMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -3396,7 +3396,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-8db8d922-ea10-422b-8c21-a7e6d28d4021",
@@ -3512,7 +3512,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-972e9e22-3d6b-402b-801c-3029a943a9f6",
