@@ -82,7 +82,8 @@ Repeat 6 times max
                                              // Get the mobile number
                                              phone = phoneInput.phoneNumber
                                              uiFeedback.infoMessage = "Otp send to the registered mobile number"
-                                             Log "@ " __________
+                                             // "Check phone number for user +++++++:" phone lang
+                                             Log "@info Check phone number for user +++++++:" phone lang
                                              Call __________#__________ 
                                              When 
                                                   Call __________#__________ 
@@ -120,8 +121,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_gqrhj = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_gqrhj
+                    it_fbpul = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_fbpul
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -138,5 +139,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_wwiur = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_wwiur
+it_vrnqj = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_vrnqj
