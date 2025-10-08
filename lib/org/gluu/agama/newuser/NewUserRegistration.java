@@ -1,27 +1,38 @@
-package org.gluu.agama.login;
-
-import org.gluu.agama.login.jans.JansNewPasswordService;
+package org.gluu.agama.newuser;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class NewPasswordService {
+import org.gluu.agama.newregistration.JansUserRegistration;
 
-    public abstract boolean validate(String username, String password);
 
-    public abstract String lockAccount(String username);
 
-    public abstract boolean isPhoneVerified(String username);
+public abstract class NewUserRegistration {
+    public abstract Map<String, Object> validateInputs(Map<String, String> profile);
 
-    public abstract boolean isPhoneUnique(String username, String phone);
+    public abstract String addNewUser(Map<String, String> profile) throws Exception;
 
-    public abstract String markPhoneAsVerified(String username, String phone);
+    // public abstract boolean usernamePolicyMatch(String userName);
 
-    public abstract boolean sendOTPCode(String username, String phone);
+    // public abstract boolean passwordPolicyMatch(String userPassword);
+
+    public abstract String sendEmail(String to, String lang);
+
+    public abstract String sendOTPCode(String phone, String lang);
 
     public abstract boolean validateOTPCode(String phone, String code);
 
-    public static NewPasswordService getInstance(HashMap config) {
-        return new JansNewPasswordService(config);
+    public abstract String markPhoneAsVerified(String userName, String phone);
+
+    public abstract boolean isPhoneUnique(String userName, String phone);
+
+
+    
+    // public static UserRegistration getInstance(){
+    //     return  JansUserRegistration.getInstance();
+    // } 
+    
+    public static NewUserRegistration getInstance(HashMap config) {
+        return new JansUserRegistration(config);
     }
 }
