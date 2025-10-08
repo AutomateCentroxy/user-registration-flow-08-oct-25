@@ -2373,7 +2373,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-ab298e14-ac6b-4939-83dc-80d645dc29b6",
@@ -2392,24 +2392,29 @@
 				"previousNodeId": "logNode-30504731-1a15-4db9-a1c1-acb8517aa847",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "isPhoneUnique",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"userName",
+						"phone"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Valid Mobile Number",
 					"hasComment": true,
-					"comment": ""
+					"comment": "",
+					"asssignedVariableName": "UniqueNumber"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-de4a8b33-4ee2-4b81-8bb2-8b0682c0f114",
