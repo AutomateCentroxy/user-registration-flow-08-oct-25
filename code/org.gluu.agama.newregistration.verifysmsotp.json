@@ -35,7 +35,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-1eb0e4ab-a82a-4a7f-9144-c9b135a671aa",
@@ -53,21 +53,22 @@
 				},
 				"previousNodeId": "startNode-671ba29d-86aa-436d-a926-74e353462b49",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Information received from the caller: \" phone lang",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log flow imputs",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Log flow imputs provided by the flow caller."
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-c147b42c-b37c-4961-b742-2b1c386c0e81",
@@ -2070,8 +2071,8 @@
 		}
 	],
 	"viewport": {
-		"x": 43.84499777145447,
-		"y": 194.70173155358253,
-		"zoom": 0.5
+		"x": 19.40543244337789,
+		"y": 225.49899389771502,
+		"zoom": 0.6745512671698494
 	}
 }
