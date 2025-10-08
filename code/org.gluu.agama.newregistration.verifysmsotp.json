@@ -618,7 +618,7 @@
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "validateOTPCode",
-					"javaVariableName": "validationAttempts",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
 					"callType": "Call method on instance",
 					"arguments": [
@@ -639,7 +639,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-b54f6c19-728a-44d3-a282-77f5700ee5e7",
@@ -935,7 +935,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-5787e0c4-5b73-4306-bad6-3aa72583825d",
@@ -2190,8 +2190,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2197.5753457268042,
-		"y": -380.16388437338287,
-		"zoom": 1.0570180405613803
+		"x": -966.4396311633138,
+		"y": 204.08327745881604,
+		"zoom": 0.6745512671698494
 	}
 }
