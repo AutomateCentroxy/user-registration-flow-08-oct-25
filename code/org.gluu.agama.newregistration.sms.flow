@@ -150,9 +150,9 @@ Repeat 6 times max
                                                        //  Validate the OTP code provided by the user.
                                                        otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
                                                        When otpValidationResults is true
-                                                            otpUiFeedback.infoMessage = "Invalid code provided."
+                                                            uiFeedback.infoMessage = "Invalid code provided."
                                                        Otherwise
-                                                            otpUiFeedback.errorMessage = "Invalid code provided."
+                                                            uiFeedback.errorMessage = "Invalid code provided."
                                              // "Phone loop completed"
                                              Log "@info Phone loop completed"
                                              // ExceededTheNumberOfAttemptsAllowed
@@ -169,8 +169,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_wtxvk = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_wtxvk
+                    it_vubte = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_vubte
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -187,5 +187,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_ojcek = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_ojcek
+it_exntl = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_exntl
