@@ -2211,8 +2211,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			},
 			"selected": false
 		},
@@ -3641,11 +3641,11 @@
 					"javaClassName": "",
 					"javaMethodName": "validateOTPCode",
 					"javaVariableName": "userRegistrationService",
-					"exceptionVariableField": "",
+					"exceptionVariableField": "otpCred.code",
 					"callType": "Call method on instance",
 					"arguments": [
 						"phone",
-						"otpCres.code"
+						"otpCred.code"
 					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
@@ -3661,7 +3661,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-e63f8fb5-3b86-49ea-831d-fe817d553808",
@@ -3781,7 +3781,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		}
 	],
@@ -5639,8 +5639,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5400.570242920719,
-		"y": -961.5125350428598,
-		"zoom": 0.7432914922155073
+		"x": -7744.466961052878,
+		"y": -1407.1767956919216,
+		"zoom": 0.9999999999999997
 	}
 }
