@@ -148,7 +148,7 @@ Repeat 6 times max
                                                        uiFeedback.infoMessage = "Please enter a new number"
                                                        otpCred = RRF "smsOtp.ftlh" uiFeedback
                                                        //  Validate the OTP code provided by the user.
-                                                       otpValidationResults | otpCred.code = Call userRegistrationService validateOTPCode phone otpCred.code
+                                                       otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
                                                        When otpValidationResults is true
                                                             otpUiFeedback.infoMessage = "Invalid code provided."
                                                        Otherwise
@@ -169,8 +169,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_jbwgh = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_jbwgh
+                    it_wtxvk = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_wtxvk
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -187,5 +187,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_secuw = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_secuw
+it_ojcek = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_ojcek
