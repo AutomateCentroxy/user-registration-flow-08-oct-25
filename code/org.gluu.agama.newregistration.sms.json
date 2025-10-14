@@ -3641,7 +3641,7 @@
 					"javaClassName": "",
 					"javaMethodName": "validateOTPCode",
 					"javaVariableName": "userRegistrationService",
-					"exceptionVariableField": "otpCred.code",
+					"exceptionVariableField": "",
 					"callType": "Call method on instance",
 					"arguments": [
 						"phone",
