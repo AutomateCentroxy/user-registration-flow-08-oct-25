@@ -3620,6 +3620,89 @@
 				"width": 170,
 				"height": 122
 			},
+			"selected": false
+		},
+		{
+			"id": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+			"type": "callNode",
+			"position": {
+				"x": 7933.555031574943,
+				"y": 1661.8295864994282
+			},
+			"data": {
+				"id": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+				"type": "callNode",
+				"position": {
+					"x": 7933.555031574943,
+					"y": 1661.8295864994282
+				},
+				"previousNodeId": "rrfNode-5d7ad768-d376-482e-9514-46296e037102",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "validateOTPCode",
+					"javaVariableName": "userRegistrationService",
+					"exceptionVariableField": "",
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone",
+						"otpCres.code"
+					],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": " Validate the OTP code provided by the user.",
+					"asssignedVariableName": "otpValidationResults"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false
+		},
+		{
+			"id": "whenNode-e63f8fb5-3b86-49ea-831d-fe817d553808",
+			"type": "whenNode",
+			"position": {
+				"x": 8183.555031574943,
+				"y": 1719.8295864994282
+			},
+			"data": {
+				"id": "whenNode-e63f8fb5-3b86-49ea-831d-fe817d553808",
+				"type": "whenNode",
+				"position": {
+					"x": 8183.555031574943,
+					"y": 1719.8295864994282
+				},
+				"previousNodeId": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+				"agamaData": {
+					"variableField": "",
+					"valueField": "",
+					"conditionInputField": "",
+					"conditions": [
+						{
+							"variable": "otpValidationResults",
+							"operator": "is",
+							"dataValue": "true",
+							"combinator": "none"
+						}
+					],
+					"nodeIcon": "ph:swap",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 110,
+				"height": 59
+			},
 			"selected": true
 		}
 	],
@@ -5398,11 +5481,49 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_assignmentNode-f94cbc42-b86d-4ff1-b936-94b4275e30c4"
+		},
+		{
+			"id": "rrfNode-5d7ad768-d376-482e-9514-46296e037102-callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+			"type": "default",
+			"source": "rrfNode-5d7ad768-d376-482e-9514-46296e037102",
+			"target": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_rrfNode-5d7ad768-d376-482e-9514-46296e037102"
+		},
+		{
+			"id": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122-whenNode-e63f8fb5-3b86-49ea-831d-fe817d553808",
+			"type": "default",
+			"source": "callNode-288e2ec9-b838-4d51-8158-40e4de7dd122",
+			"target": "whenNode-e63f8fb5-3b86-49ea-831d-fe817d553808",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_callNode-288e2ec9-b838-4d51-8158-40e4de7dd122"
 		}
 	],
 	"viewport": {
-		"x": -7132.997040842873,
-		"y": -1329.9308531306278,
-		"zoom": 1.013959479790028
+		"x": -11613.12394798367,
+		"y": -2323.1619852179942,
+		"zoom": 1.5073349095583808
 	}
 }
