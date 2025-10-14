@@ -154,6 +154,7 @@ Repeat 6 times max
                                                                  uiFeedback.infoMessage = "Invalid code provided."
                                                             Otherwise
                                                                  uiFeedback.errorMessage = "Invalid code provided."
+                                                       it_ootpmax = { success: false, error: "ExceededTheNumberOfAttemptsAllowed" }
                                              // "Phone loop completed"
                                              Log "@info Phone loop completed"
                                              // ExceededTheNumberOfAttemptsAllowed
@@ -170,8 +171,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_nddza = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_nddza
+                    it_pxsdj = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_pxsdj
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -188,5 +189,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_uyymq = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_uyymq
+it_dmzln = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_dmzln
