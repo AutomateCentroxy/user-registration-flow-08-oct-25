@@ -146,13 +146,14 @@ Repeat 6 times max
                                                        Log "@info This phone is already used by another account. Please enter a different one."
                                                        uiFeedback.errorMessage = "This phone is already used by another account. Please enter a different one."
                                                        uiFeedback.infoMessage = "Please enter a new number"
-                                                       otpCred = RRF "smsOtp.ftlh" uiFeedback
-                                                       //  Validate the OTP code provided by the user.
-                                                       otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
-                                                       When otpValidationResults is true
-                                                            uiFeedback.infoMessage = "Invalid code provided."
-                                                       Otherwise
-                                                            uiFeedback.errorMessage = "Invalid code provided."
+                                                       max = Repeat 3 times max
+                                                            otpCred = RRF "smsOtp.ftlh" uiFeedback
+                                                            //  Validate the OTP code provided by the user.
+                                                            otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
+                                                            When otpValidationResults is true
+                                                                 uiFeedback.infoMessage = "Invalid code provided."
+                                                            Otherwise
+                                                                 uiFeedback.errorMessage = "Invalid code provided."
                                              // "Phone loop completed"
                                              Log "@info Phone loop completed"
                                              // ExceededTheNumberOfAttemptsAllowed
@@ -169,8 +170,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_utynx = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_utynx
+                    it_nddza = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_nddza
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -187,5 +188,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dhlfq = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dhlfq
+it_uyymq = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_uyymq
