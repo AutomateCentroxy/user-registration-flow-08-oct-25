@@ -3787,7 +3787,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3822,6 +3822,45 @@
 				"height": 122
 			},
 			"selected": false
+		},
+		{
+			"id": "assignmentNode-a4bfd8dc-5482-41d2-9cca-d82e049270ba",
+			"type": "assignmentNode",
+			"position": {
+				"x": 7799.427383763847,
+				"y": 1223.9422657043767
+			},
+			"data": {
+				"id": "assignmentNode-a4bfd8dc-5482-41d2-9cca-d82e049270ba",
+				"type": "assignmentNode",
+				"position": {
+					"x": 7799.427383763847,
+					"y": 1223.9422657043767
+				},
+				"previousNodeId": "repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1",
+				"branching": "continue",
+				"agamaData": {
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{ success: false, error: \"ExceededTheNumberOfAttemptsAllowed\" }",
+							"assignedVariableName": "it_ootpmax"
+						}
+					],
+					"nodeIcon": "material-symbols:equal",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "Set validation error",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -5693,6 +5732,25 @@
 				"fillOpacity": 0.7
 			},
 			"id": "xy-edge__repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1source_repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1_repeat-rrfNode-5d7ad768-d376-482e-9514-46296e037102target_rrfNode-5d7ad768-d376-482e-9514-46296e037102"
+		},
+		{
+			"id": "repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1-assignmentNode-a4bfd8dc-5482-41d2-9cca-d82e049270ba",
+			"type": "default",
+			"source": "repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1",
+			"target": "assignmentNode-a4bfd8dc-5482-41d2-9cca-d82e049270ba",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "continue",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_repeatNode-7a209418-3de2-47d6-b51e-884b9180cdf1_continue"
 		}
 	],
 	"viewport": {
