@@ -10,6 +10,9 @@ import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 import org.gluu.agama.newuser.NewUserRegistration;
 import io.jans.agama.engine.script.LogUtils;
@@ -474,6 +477,82 @@ public class JansUserRegistration extends NewUserRegistration {
     private static User getUser(String attributeName, String value) {
         UserService userService = CdiUtil.bean(UserService.class);
         return userService.getUserByAttribute(attributeName, value, true);
-    }    
+    }  
+    
+    public static Map<String, Object> syncUserWithExternal(String inum, Map<String, String> conf) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            // Load config using CdiUtil or static ConfigService
+            Map<String, String> config = new HashMap<>();
+            if (conf == null) {
+            result.put("status", "error");
+            result.put("message", "Configuration is null");
+            return result;
+        }
+
+            String publicKey = conf.get("PUBLIC_KEY");
+            String privateKey = conf.get("PRIVATE_KEY");
+
+            if (publicKey == null || privateKey == null) {
+                result.put("status", "error");
+                result.put("message", "PUBLIC_KEY or PRIVATE_KEY missing in config");
+                return result;
+            }
+
+            // Generate HMAC-SHA256 signature (hex lowercase)
+            String signature;
+            try {
+                javax.crypto.Mac mac = javax.crypto.Mac.getInstance("HmacSHA256");
+                javax.crypto.spec.SecretKeySpec secretKey = new javax.crypto.spec.SecretKeySpec(
+                        privateKey.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+                        "HmacSHA256");
+                mac.init(secretKey);
+                byte[] hashBytes = mac.doFinal(inum.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                StringBuilder hex = new StringBuilder();
+                for (byte b : hashBytes) {
+                    String h = Integer.toHexString(0xff & b);
+                    if (h.length() == 1)
+                        hex.append('0');
+                    hex.append(h);
+                }
+                signature = hex.toString().toLowerCase();
+            } catch (Exception ex) {
+                result.put("status", "error");
+                result.put("message", "Failed to generate signature: " + ex.getMessage());
+                return result;
+            }
+
+            // Build webhook URL
+            String url = String.format("https://api.phiwallet.dev/v1/webhooks/users/%s/sync", inum);
+
+            // HTTP request
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("X-AUTH-CLIENT", publicKey)
+                    .header("X-HMAC-SIGNATURE", signature)
+                    .POST(HttpRequest.BodyPublishers.noBody())
+                    .build();
+
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println(String.format("Webhook sync response status: %d, body: %s",
+                    response.statusCode(), response.body()));
+
+            if (response.statusCode() == 200) {
+                result.put("status", "success");
+            } else {
+                result.put("status", "error");
+                result.put("message", response.body());
+            }
+
+            return result;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("status", "error");
+            result.put("message", e.getMessage());
+            return result;
+        }
+    }
 }
 
