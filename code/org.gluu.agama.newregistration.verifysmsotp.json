@@ -22,7 +22,7 @@
 					"configParams": "{}",
 					"nodeIcon": "material-symbols:line-start-square",
 					"timeout": "900",
-					"inputs": "userRegistrationService phone lang",
+					"inputs": "userRegistrationService phone lang UniqueNumber",
 					"configs": "",
 					"flowname": "org.gluu.agama.newregistration.verifysmsotp",
 					"displayName": "org.gluu.agama.newregistration.verifysmsotp",
@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-1eb0e4ab-a82a-4a7f-9144-c9b135a671aa",
@@ -331,7 +331,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false,
@@ -375,7 +375,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false,
@@ -594,7 +594,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false
@@ -817,7 +817,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false
@@ -861,7 +861,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-3f41ae1e-cd87-4881-9c5b-0a2d21bb4544",
@@ -1081,7 +1081,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false
@@ -1353,7 +1353,7 @@
 				}
 			},
 			"measured": {
-				"width": 109,
+				"width": 110,
 				"height": 59
 			},
 			"selected": false,
@@ -2249,8 +2249,8 @@
 		}
 	],
 	"viewport": {
-		"x": -853.1680703369802,
-		"y": -197.46288650570858,
-		"zoom": 0.7412335049014176
+		"x": -17.811823094492922,
+		"y": 113.36961754434662,
+		"zoom": 1.1518876423493571
 	}
 }
