@@ -149,7 +149,8 @@ Repeat 6 times max
                                                        max = Repeat 4 times max
                                                             otpCred = RRF "smsOtp.ftlh" uiFeedback
                                                             When otpCred.changenumber is "yes"
-                                                                 Finish __________
+                                                                 it_kvhkl = {success:false, error: "Your error message here"}
+                                                                 Finish it_kvhkl
                                                             Otherwise
                                                                  //  Validate the OTP code provided by the user.
                                                                  otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
@@ -175,8 +176,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_yrtpj = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_yrtpj
+                    it_yblyh = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_yblyh
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -193,5 +194,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_cuuvy = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_cuuvy
+it_tpnde = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_tpnde
