@@ -3540,18 +3540,22 @@
 				"branching": "success",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "validateEmailOtp",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"email",
+						"emailOtp"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "validOtpInTime",
 					"hasComment": true,
-					"comment": ""
+					"comment": "",
+					"asssignedVariableName": "validOtpInTime"
 				}
 			},
 			"measured": {
@@ -3580,7 +3584,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "validOtpInTime",
+							"operator": "is",
+							"dataValue": "true",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -3614,7 +3625,18 @@
 				"previousNodeId": "whenNode-f35c26ff-00a1-46f8-b4f5-b67e74fad93a",
 				"branching": "otherwise",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Invalid OTP, Please Try Again!\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
@@ -3627,7 +3649,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -5406,8 +5429,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5347.288186117024,
-		"y": -317.41799528864385,
-		"zoom": 1.326845140597161
+		"x": -2117.3553661634073,
+		"y": -15.809896866596489,
+		"zoom": 0.6542890357275047
 	}
 }
