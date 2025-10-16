@@ -150,7 +150,8 @@ Repeat 6 times max
                                              // Registration failed log
                                              Log "@info User registration failed. Error : %" E
                                         Otherwise
-                                             uiFeedback.errorMessage = "Invalid OTP, Please Try Again!"
+                                             // "OTP Expired, Please Try Again!"
+                                             uiFeedback.errorMessage = "OTP Expired, Please Try Again!"
                                              uiFeedback.infoMessage = ""
                                    Otherwise
                                         // Invalid OTP
@@ -161,8 +162,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_nghzj = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_nghzj
+                    it_snyuf = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_snyuf
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -179,5 +180,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_hjotj = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_hjotj
+it_kuvki = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_kuvki
