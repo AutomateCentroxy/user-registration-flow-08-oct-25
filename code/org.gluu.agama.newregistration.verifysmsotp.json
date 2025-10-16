@@ -6,7 +6,7 @@
 			"sourcePosition": "right",
 			"position": {
 				"x": 30,
-				"y": 30
+				"y": 27.34630971880567
 			},
 			"deletable": false,
 			"data": {
@@ -35,7 +35,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-1eb0e4ab-a82a-4a7f-9144-c9b135a671aa",
@@ -53,7 +54,7 @@
 				},
 				"previousNodeId": "startNode-671ba29d-86aa-436d-a926-74e353462b49",
 				"agamaData": {
-					"logMessage": "\"Information received from the caller: \" phone lang",
+					"logMessage": "\"Information received from the caller: \" phone lang UniqueNumber",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -149,7 +150,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-af270cfe-7236-453d-9fc2-9a16c657aa5a",
@@ -936,7 +937,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2250,8 +2251,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1436.047061700674,
-		"y": -97.86584577686983,
-		"zoom": 0.8681402276010425
+		"x": 145.25409584351917,
+		"y": 55.91748776512378,
+		"zoom": 0.7536674547791904
 	}
 }
