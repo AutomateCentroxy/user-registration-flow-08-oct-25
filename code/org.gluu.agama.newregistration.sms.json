@@ -1675,7 +1675,7 @@
 					"conditionInputField": "",
 					"conditions": [
 						{
-							"variable": "emailOtpCreds.passcode",
+							"variable": "emailOtp",
 							"operator": "is",
 							"dataValue": "otpCode",
 							"combinator": "none"
@@ -1694,7 +1694,7 @@
 				"width": 110,
 				"height": 59
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3476,7 +3476,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -5243,8 +5243,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3006.0927171903318,
-		"y": -966.1032616919347,
-		"zoom": 1.1679673946131142
+		"x": -2746.0659474218296,
+		"y": -303.4026453948519,
+		"zoom": 0.880259013563148
 	}
 }
