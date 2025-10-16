@@ -30,10 +30,6 @@ public abstract class NewUserRegistration {
 
 
     
-    // public static UserRegistration getInstance(){
-    //     return  JansUserRegistration.getInstance();
-    // } 
-    
     public static NewUserRegistration getInstance(HashMap config) {
         return new JansUserRegistration(config);
     }
