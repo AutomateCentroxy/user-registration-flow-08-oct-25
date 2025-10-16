@@ -94,8 +94,8 @@ Repeat 6 times max
                                    // "After the validationAttempts loop"
                                    Log "@info After the validationAttempts loop"
                                    When emailOtp is otpCode
-                                        Call __________#__________ 
-                                        When 
+                                        validOtpInTime = Call userRegistrationService validateEmailOtp email emailOtp
+                                        When validOtpInTime is true
                                              Log "@info Email Otp Verified"
                                              EmailOtpValidationResult = true
                                              Log "@info E-mail verification passed, initiating user provisioning flow " userInput
@@ -150,6 +150,8 @@ Repeat 6 times max
                                              // Registration failed log
                                              Log "@info User registration failed. Error : %" E
                                         Otherwise
+                                             uiFeedback.errorMessage = "Invalid OTP, Please Try Again!"
+                                             uiFeedback.infoMessage = ""
                                    Otherwise
                                         // Invalid OTP
                                         Log "@info Invalid OTP, Please Try Again!"
@@ -159,8 +161,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_rtlgi = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_rtlgi
+                    it_nghzj = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_nghzj
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -177,5 +179,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_hfzsj = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_hfzsj
+it_hjotj = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_hjotj
