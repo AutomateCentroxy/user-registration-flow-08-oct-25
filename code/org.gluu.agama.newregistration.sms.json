@@ -1500,7 +1500,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3456,12 +3456,18 @@
 				},
 				"previousNodeId": "rrfNode-ac10a51d-fcb7-4317-b5c4-45d48131fa7e",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "emailOtpCreds.passcode",
+							"assignedVariableName": "emailOtp"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "emailOtp",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -3470,7 +3476,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -5237,8 +5243,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1616.8872485902407,
-		"y": -198.2002532292555,
-		"zoom": 0.6634225702985795
+		"x": -3006.0927171903318,
+		"y": -966.1032616919347,
+		"zoom": 1.1679673946131142
 	}
 }
