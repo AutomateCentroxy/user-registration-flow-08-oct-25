@@ -277,8 +277,13 @@ public class JansUserRegistration extends NewUserRegistration {
     }
     
         
-    public String sendOTPCode(String phone, String lang) {
+    public String sendOTPCode(String phone, String lang, boolean UniqueNumber) {
         try {
+            if (!UniqueNumber ) { 
+            logger.info("Phone number {} already exists. Skipping OTP send, but returning control to Agama flow.", phone);
+            return phone;
+            }
+
             logger.info("Sending OTP Code via SMS to phone: {}", phone);
 
             String otpCode = generateSMSOTpCode(OTP_CODE_LENGTH);

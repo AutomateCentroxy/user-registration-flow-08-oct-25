@@ -113,49 +113,32 @@ Repeat 6 times max
                                                   // "Check phone number for user +++++++:" phone lang
                                                   Log "@info Check phone number for user +++++++:" phone  userName
                                                   UniqueNumber = Call userRegistrationService isPhoneUnique userName phone
-                                                  When UniqueNumber is true
-                                                       // sent sms otp
-                                                       smsOtpSend = Call userRegistrationService sendOTPCode phone lang
-                                                       // The OTP Code has been send to user.
-                                                       Log "@info OTP generated and send to: " phone
-                                                       // Launch OTP Subflow
-                                                       otpFeedBack = Trigger org.gluu.agama.newregistration.verifysmsotp userRegistrationService phone lang
-                                                       // OTP Code validation is completed.
-                                                       Log "@info OTP Code validation completed with status: " otpFeedBack
-                                                       // Check if OTP validation vas okay
-                                                       When otpFeedBack.success is true
-                                                            phoneVerified = Call userRegistrationService markPhoneAsVerified userName phone
-                                                            // Show acknowledgement UI page for successful registration
-                                                            acknowledgementInput = RRF "acknowledgement.ftlh" 
-                                                            // Finish the flow successfully
-                                                            Log "@info Finish the flow successfully"
-                                                            Finish userName
-                                                       Otherwise
-                                                            // "ExceededResendAttempts"
-                                                            When otpFeedBack.error is "ExceededResendAttempts"
-                                                                 // "Resend attempts exceeded in OTP flow"
-                                                                 Log "@info Resend attempts exceeded in OTP flow"
-                                                                 Finish otpFeedBack
-                                                            // Check if OTP attempts exceeded
-                                                            When otpFeedBack.error is "ExceededTheNumberOfAttemptsAllowed"
-                                                                 Log "@info OTP validation attempts exceeded"
-                                                                 Finish otpFeedBack
-                                                            uiFeedback.errorMessage = "Please try again with a different mobile number."
+                                                  smsOtpSend = Call userRegistrationService sendOTPCode phone lang UniqueNumber
+                                                  // The OTP Code has been send to user.
+                                                  Log "@info OTP generated and send to: " phone
+                                                  // Launch OTP Subflow
+                                                  otpFeedBack = Trigger org.gluu.agama.newregistration.verifysmsotp userRegistrationService phone lang UniqueNumber
+                                                  // OTP Code validation is completed.
+                                                  Log "@info OTP Code validation completed with status: " otpFeedBack
+                                                  // Check if OTP validation vas okay
+                                                  When otpFeedBack.success is true
+                                                       phoneVerified = Call userRegistrationService markPhoneAsVerified userName phone
+                                                       // Show acknowledgement UI page for successful registration
+                                                       acknowledgementInput = RRF "acknowledgement.ftlh" 
+                                                       // Finish the flow successfully
+                                                       Log "@info Finish the flow successfully"
+                                                       Finish userName
                                                   Otherwise
-                                                       // "This phone is already used by another account. Please enter a different one.
-                                                       Log "@info This phone is already used by another account. Please enter a different one."
-                                                       uiFeedback.errorMessage = "This phone is already used by another account. Please enter a different one."
-                                                       uiFeedback.infoMessage = "Please enter a new number"
-                                                       max = Repeat 4 times max
-                                                            otpCred = RRF "smsOtp.ftlh" uiFeedback
-                                                            //  Validate the OTP code provided by the user.
-                                                            otpValidationResults = Call userRegistrationService validateOTPCode phone otpCred.code
-                                                            When otpValidationResults is true
-                                                                 uiFeedback.infoMessage = "Invalid code provided."
-                                                            Otherwise
-                                                                 uiFeedback.errorMessage = "Invalid code provided."
-                                                       it_ootpmax = { success: false, error: "ExceededTheNumberOfAttemptsAllowed" }
-                                                       Finish it_ootpmax
+                                                       // "ExceededResendAttempts"
+                                                       When otpFeedBack.error is "ExceededResendAttempts"
+                                                            // "Resend attempts exceeded in OTP flow"
+                                                            Log "@info Resend attempts exceeded in OTP flow"
+                                                            Finish otpFeedBack
+                                                       // Check if OTP attempts exceeded
+                                                       When otpFeedBack.error is "ExceededTheNumberOfAttemptsAllowed"
+                                                            Log "@info OTP validation attempts exceeded"
+                                                            Finish otpFeedBack
+                                                       uiFeedback.errorMessage = "Please try again with a different mobile number."
                                              // "Phone loop completed"
                                              Log "@info Phone loop completed"
                                              // ExceededTheNumberOfAttemptsAllowed
@@ -172,8 +155,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_dkkig = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_dkkig
+                    it_nowla = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_nowla
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -190,5 +173,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_qwhfp = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_qwhfp
+it_zaxaf = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_zaxaf
