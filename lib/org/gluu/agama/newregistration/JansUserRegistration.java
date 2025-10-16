@@ -99,6 +99,9 @@ public class JansUserRegistration extends NewUserRegistration {
         String code;
         long timestamp; // in milliseconds
 
+        public OTPEntry() {
+        }
+
         OTPEntry(String code) {
             this.code = code;
             this.timestamp = System.currentTimeMillis();
