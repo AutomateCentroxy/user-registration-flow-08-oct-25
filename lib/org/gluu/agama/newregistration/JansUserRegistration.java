@@ -279,19 +279,15 @@ public class JansUserRegistration extends NewUserRegistration {
         
     public String sendOTPCode(String phone, String lang, boolean UniqueNumber) {
         try {
-
-            String actualTargetPhone = phone;
-
             if (!UniqueNumber ) { 
             logger.info("Phone number {} already exists. Skipping OTP send, but returning control to Agama flow.", phone);
-
-            actualTargetPhone = "+12345678990";
+            return phone;
             }
 
-            logger.info("Sending OTP Code via SMS to phone: {}", actualTargetPhone);
+            logger.info("Sending OTP Code via SMS to phone: {}", phone);
 
             String otpCode = generateSMSOTpCode(OTP_CODE_LENGTH);
-            logger.info("Generated OTP {} for phone {}", otpCode, actualTargetPhone);
+            logger.info("Generated OTP {} for phone {}", otpCode, phone);
 
             
             String preferredLang = (lang != null && !lang.isEmpty()) ? lang.toLowerCase() : "en";
@@ -309,7 +305,7 @@ public class JansUserRegistration extends NewUserRegistration {
 
             associateGeneratedCodeToPhone(phone, otpCode);
 
-            sendTwilioSms(actualTargetPhone, message);
+            sendTwilioSms(phone, message);
 
             return phone;
         } catch (Exception ex) {
