@@ -2377,7 +2377,7 @@
 					"x": 7433.555031574943,
 					"y": 2111.829586499428
 				},
-				"previousNodeId": "callNode-596f77b1-5740-430e-8295-d265003dc029",
+				"previousNodeId": "callNode-12a7777b-14a8-4141-aa80-5b1cb3bfeac5",
 				"agamaData": {
 					"logMessage": "\"OTP generated and send to: \" phone",
 					"logLevel": "info",
@@ -5159,6 +5159,24 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_callNode-ab298e14-ac6b-4939-83dc-80d645dc29b6"
+		},
+		{
+			"source": "callNode-12a7777b-14a8-4141-aa80-5b1cb3bfeac5",
+			"sourceHandle": "source_callNode-12a7777b-14a8-4141-aa80-5b1cb3bfeac5",
+			"target": "logNode-ed510890-26bc-4e98-b906-0977ca9cf63a",
+			"targetHandle": "target_logNode-ed510890-26bc-4e98-b906-0977ca9cf63a",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"id": "xy-edge__callNode-12a7777b-14a8-4141-aa80-5b1cb3bfeac5source_callNode-12a7777b-14a8-4141-aa80-5b1cb3bfeac5-logNode-ed510890-26bc-4e98-b906-0977ca9cf63atarget_logNode-ed510890-26bc-4e98-b906-0977ca9cf63a"
 		}
 	],
 	"viewport": {
