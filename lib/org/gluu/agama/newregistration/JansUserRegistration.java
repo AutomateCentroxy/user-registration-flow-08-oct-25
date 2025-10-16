@@ -282,7 +282,7 @@ public class JansUserRegistration extends NewUserRegistration {
             
             if (!UniqueNumber ) { 
             logger.info("Phone number {} already exists. Skipping OTP send, but returning control to Agama flow.", phone);
-            return phone;
+            return null;
             }
             
             logger.info("Sending OTP Code via SMS to phone: {}", phone);
