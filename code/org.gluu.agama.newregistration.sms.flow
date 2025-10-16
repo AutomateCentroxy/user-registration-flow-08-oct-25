@@ -156,8 +156,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_wcgyf = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_wcgyf
+                    it_elrrj = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_elrrj
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -174,5 +174,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_rezet = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_rezet
+it_vllvs = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_vllvs
