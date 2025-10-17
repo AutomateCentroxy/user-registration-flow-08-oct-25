@@ -10,6 +10,8 @@ import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -32,12 +34,10 @@ import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
-
-
 public class JansUserRegistration extends NewUserRegistration {
 
     private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
-    
+
     private static final String SN = "sn";
     private static final String CONFIRM_PASSWORD = "confirmPassword";
     private static final String LANG = "lang";
@@ -58,28 +58,27 @@ public class JansUserRegistration extends NewUserRegistration {
     private static final int OTP_LENGTH = 6;
     public static final int OTP_CODE_LENGTH = 6;
     private static final String SUBJECT_TEMPLATE = "Here's your verification code: %s";
-    private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";   
+    private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";
     private static final SecureRandom RAND = new SecureRandom();
-    
 
     private static JansUserRegistration INSTANCE = null;
     private Map<String, String> flowConfig;
-    private final Map<String, String> emailOtpStore = new HashMap<>();
-    private static final Map<String, String> userCodes = new HashMap<>();
+    private final Map<String, OTPEntry> emailOtpStore = new HashMap<>();
+    private static final Map<String, OTPEntry> userCodes = new HashMap<>();
 
-    //  No-arg constructor
+    // No-arg constructor
     public JansUserRegistration() {
         this.flowConfig = new HashMap<>();
         logger.info("Initialized JansUserRegistration using default constructor (no config).");
     }
 
-    //  Constructor used by config
+    // Constructor used by config
     private JansUserRegistration(Map<String, String> config) {
         this.flowConfig = config;
         logger.info("Using Twilio account SID: {}", config.get("ACCOUNT_SID"));
     }
 
-    //  No-arg singleton accessor (required by engine)
+    // No-arg singleton accessor (required by engine)
     public static synchronized NewUserRegistration getInstance() {
         if (INSTANCE == null) {
             Map<String, String> config = loadTwilioConfig();
@@ -88,13 +87,50 @@ public class JansUserRegistration extends NewUserRegistration {
         return INSTANCE;
     }
 
-    //  Config-based singleton accessor
+    // Config-based singleton accessor
     public static synchronized NewUserRegistration getInstance(Map<String, String> config) {
         if (INSTANCE == null) {
             INSTANCE = new JansUserRegistration(config);
         }
         return INSTANCE;
     }
+
+
+
+    public static class OTPEntry implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
+
+        private String code;
+        private long timestamp; // in milliseconds
+
+        // Required no-arg constructor for Agama serialization
+        public OTPEntry() {
+        }
+
+        // Convenience constructor for easy instantiation
+        public OTPEntry(String code) {
+            this.code = code;
+            this.timestamp = System.currentTimeMillis();
+        }
+
+        // Getters and Setters
+        public String getCode() { 
+            return code; 
+        }
+
+        public void setCode(String code) { 
+            this.code = code; 
+        }
+
+        public long getTimestamp() { 
+            return timestamp; 
+        }
+
+        public void setTimestamp(long timestamp) { 
+            this.timestamp = timestamp; 
+        }
+    }
+
 
     public  Map<String, Object> validateInputs(Map<String, String> profile) {
         LogUtils.log("Validate inputs ");
@@ -111,28 +147,32 @@ public class JansUserRegistration extends NewUserRegistration {
             return result;
         }
 
-        if (profile.get(LANG) == null || !Pattern.matches('''^(ar|en|es|fr|pt|id)$''', profile.get(LANG))) {
+        if(profile.get(LANG)==null||!Pattern.matches('''^(ar|en|es|fr|pt|id)$''',profile.get(LANG)))
+
+        {
             result.put("valid", false);
             result.put("message", "Invalid language code. Must be one of ar, en, es, fr, pt, or id.");
             return result;
         }
 
-        if (profile.get(RESIDENCE_COUNTRY) == null || !Pattern.matches('''^[A-Z]{2}$''', profile.get(RESIDENCE_COUNTRY))) {
+        if(profile.get(RESIDENCE_COUNTRY)==null||!Pattern.matches('''^[A-Z]{2}$''',profile.get(RESIDENCE_COUNTRY)))
+        {
             result.put("valid", false);
             result.put("message", "Invalid residence country. Must be exactly two uppercase letters.");
             return result;
         }
 
-        if (!profile.get(PASSWORD).equals(profile.get(CONFIRM_PASSWORD))) {
+        if(!profile.get(PASSWORD).equals(profile.get(CONFIRM_PASSWORD)))
+        {
             result.put("valid", false);
             result.put("message", "Password and confirm password do not match");
             return result;
         }
 
-        result.put("valid", true);
-        result.put("message", "All inputs are valid.");
+        result.put("valid",true);
+        result.put("message","All inputs are valid.");
         return result;
-    }      
+        }
 
     public Map<String, String> getUserEntityByMail(String email) {
         User user = getUser(MAIL, email);
@@ -163,7 +203,6 @@ public class JansUserRegistration extends NewUserRegistration {
     
         return new HashMap<>();
     }
-    
 
     public Map<String, String> getUserEntityByUsername(String username) {
         User user = getUser(UID, username);
@@ -255,6 +294,10 @@ public class JansUserRegistration extends NewUserRegistration {
 
             if (sent) {
                 LogUtils.log("Localized registration OTP email sent to %", to);
+
+                // Store OTP with timestamp for expiration
+                emailOtpStore.put(to, new OTPEntry(otp));
+
                 return otp; // return OTP so you can validate later
             } else {
                 LogUtils.log("Failed to send registration OTP email to %", to);
@@ -267,16 +310,35 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     }
 
-
-
     private SmtpConfiguration getSmtpConfiguration() {
         ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
         SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();
         return smtpConfiguration;
 
     }
-    
-        
+
+    public boolean validateEmailOtp(String email, String emailOtp) {
+        OTPEntry entry = emailOtpStore.get(email);
+        if (entry == null) {
+            LogUtils.log("No OTP found for email %", email);
+            return false;
+        }
+
+        // Check expiration: 10 minutes = 10 * 60 * 1000 ms
+        long elapsed = System.currentTimeMillis() - entry.timestamp;
+        if (elapsed > 10 * 60 * 1000) {
+            LogUtils.log("OTP for email % has expired", email);
+            emailOtpStore.remove(email);
+            return false;
+        }
+
+        if (entry.code.equalsIgnoreCase(emailOtp)) {
+            emailOtpStore.remove(email); // remove after successful validation
+            return true;
+        }
+        return false;
+    }
+
     public String sendOTPCode(String phone, String lang, boolean UniqueNumber) {
         try {
             if (!UniqueNumber ) { 
@@ -314,7 +376,6 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     }
 
-
     private String generateSMSOTpCode(int codeLength) {
         String numbers = "0123456789";
         SecureRandom random = new SecureRandom();
@@ -328,7 +389,7 @@ public class JansUserRegistration extends NewUserRegistration {
     private boolean associateGeneratedCodeToPhone(String phone, String code) {
         try {
             logger.info("Associating code {} to phone {}", code, phone);
-            userCodes.put(phone, code);
+            userCodes.put(phone, new OTPEntry(code));
             logger.info("userCodes map now: {}", userCodes);
             return true;
         } catch (Exception e) {
@@ -367,21 +428,31 @@ public class JansUserRegistration extends NewUserRegistration {
     public boolean validateOTPCode(String phone, String code) {
         try {
             logger.info("Validating OTP code {} for phone {}", code, phone);
-            String storedCode = userCodes.getOrDefault(phone, "NULL");
-            logger.info("User submitted code: {} — Stored code: {}", code, storedCode);
-            if (storedCode.equalsIgnoreCase(code)) {
-                userCodes.remove(phone); // Remove after successful validation
+            OTPEntry entry = userCodes.get(phone);
+
+            if (entry == null) {
+                logger.info("No OTP found for phone {}", phone);
+                return false;
+            }
+
+            long elapsed = System.currentTimeMillis() - entry.timestamp;
+            if (elapsed > 10 * 60 * 1000) { 
+                logger.info("OTP for phone {} has expired", phone);
+                userCodes.remove(phone);
+                return false;
+            }
+
+            if (entry.code.equalsIgnoreCase(code)) {
+                userCodes.remove(phone);
                 return true;
             }
+
             return false;
         } catch (Exception ex) {
             logger.error("Error validating OTP code {} for phone {}. Error: {}", code, phone, ex.getMessage(), ex);
             return false;
         }
     }
-
-
-
 
     public String addNewUser(Map<String, String> profile) throws Exception {
         Set<String> attributes = Set.of("uid", "mail", "displayName","givenName", "sn", "userPassword", "lang", "residenceCountry", "referralCode");
@@ -406,7 +477,7 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     
         return getSingleValuedAttr(user, INUM_ATTR);
-    } 
+    }
 
     public String markPhoneAsVerified(String userName, String phone) {
         try {
@@ -420,7 +491,7 @@ public class JansUserRegistration extends NewUserRegistration {
             // Just set to true
             user.setAttribute(PHONE_NUMBER, phone);
             user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
-            
+
             userService.updateUser(user);
             logger.info("Phone verification set to TRUE for UID {}", userName);
             return "Phone " + phone + " verified successfully for user " + userName;
@@ -429,7 +500,6 @@ public class JansUserRegistration extends NewUserRegistration {
             return "Error: " + e.getMessage();
         }
     }
-
 
     public boolean isPhoneUnique(String username, String phone) {
         try {
@@ -470,7 +540,7 @@ public class JansUserRegistration extends NewUserRegistration {
     private String getSingleValuedAttr(User user, String attribute) {
         Object value = null;
         if (attribute.equals(UID)) {
-            //user.getAttribute("uid", true, false) always returns null :(
+            // user.getAttribute("uid", true, false) always returns null :(
             value = user.getUserId();
         } else {
             value = user.getAttribute(attribute, true, false);
@@ -482,18 +552,18 @@ public class JansUserRegistration extends NewUserRegistration {
     private static User getUser(String attributeName, String value) {
         UserService userService = CdiUtil.bean(UserService.class);
         return userService.getUserByAttribute(attributeName, value, true);
-    }  
-    
+    }
+
     public static Map<String, Object> syncUserWithExternal(String inum, Map<String, String> conf) {
         Map<String, Object> result = new HashMap<>();
         try {
             // Load config using CdiUtil or static ConfigService
             Map<String, String> config = new HashMap<>();
             if (conf == null) {
-            result.put("status", "error");
-            result.put("message", "Configuration is null");
-            return result;
-        }
+                result.put("status", "error");
+                result.put("message", "Configuration is null");
+                return result;
+            }
 
             String publicKey = conf.get("PUBLIC_KEY");
             String privateKey = conf.get("PRIVATE_KEY");
@@ -560,4 +630,3 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     }
 }
-

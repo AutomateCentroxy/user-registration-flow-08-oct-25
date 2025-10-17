@@ -26,11 +26,9 @@ public abstract class NewUserRegistration {
 
     public abstract boolean isPhoneUnique(String userName, String phone);
 
+    public abstract boolean validateEmailOtp(String email, String emailOtp);
 
-    
-    // public static UserRegistration getInstance(){
-    //     return  JansUserRegistration.getInstance();
-    // } 
+
     
     public static NewUserRegistration getInstance(HashMap config) {
         return new JansUserRegistration(config);
