@@ -95,18 +95,42 @@ public class JansUserRegistration extends NewUserRegistration {
         return INSTANCE;
     }
 
-    private static class OTPEntry {
-        String code;
-        long timestamp; // in milliseconds
 
+
+    public static class OTPEntry implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
+
+        private String code;
+        private long timestamp; // in milliseconds
+
+        // Required no-arg constructor for Agama serialization
         public OTPEntry() {
         }
 
-        OTPEntry(String code) {
+        // Convenience constructor for easy instantiation
+        public OTPEntry(String code) {
             this.code = code;
             this.timestamp = System.currentTimeMillis();
         }
+
+        // Getters and Setters
+        public String getCode() { 
+            return code; 
+        }
+
+        public void setCode(String code) { 
+            this.code = code; 
+        }
+
+        public long getTimestamp() { 
+            return timestamp; 
+        }
+
+        public void setTimestamp(long timestamp) { 
+            this.timestamp = timestamp; 
+        }
     }
+
 
     public  Map<String, Object> validateInputs(Map<String, String> profile) {
         LogUtils.log("Validate inputs ");
