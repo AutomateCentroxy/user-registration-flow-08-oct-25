@@ -326,7 +326,7 @@ public class JansUserRegistration extends NewUserRegistration {
 
         // Check expiration: 10 minutes = 10 * 60 * 1000 ms
         long elapsed = System.currentTimeMillis() - entry.timestamp;
-        if (elapsed > 2 * 60 * 1000) {
+        if (elapsed > 10 * 60 * 1000) {
             LogUtils.log("OTP for email % has expired", email);
             emailOtpStore.remove(email);
             return false;
@@ -436,7 +436,7 @@ public class JansUserRegistration extends NewUserRegistration {
             }
 
             long elapsed = System.currentTimeMillis() - entry.timestamp;
-            if (elapsed > 2 * 60 * 1000) { 
+            if (elapsed > 10 * 60 * 1000) { 
                 logger.info("OTP for phone {} has expired", phone);
                 userCodes.remove(phone);
                 return false;
