@@ -310,6 +310,75 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     }
 
+@Override
+public boolean sendRegSuccessEmail(String to, String userName, String lang) {
+        try {
+            // Fetch SMTP configuration
+            ConfigurationService configService = CdiUtil.bean(ConfigurationService.class);
+            SmtpConfiguration smtpConfig = configService.getConfiguration().getSmtpConfiguration();
+
+            if (smtpConfig == null) {
+                LogUtils.log("SMTP configuration is missing.");
+                return false;
+            }
+
+            // Preferred language from user profile or fallback to English
+            String preferredLang = (lang != null && !lang.isEmpty())
+                    ? lang.toLowerCase()
+                    : "en";
+
+            // Select correct template
+            Map<String, String> templateData;
+            switch (preferredLang) {
+                case "ar":
+                    templateData = EmailWelcomeAr.get(userName);
+                    break;
+                case "es":
+                    templateData = EmailWelcomeEs.get(userName);
+                    break;
+                case "fr":
+                    templateData = EmailWelcomeFr.get(userName);
+                    break;
+                case "id":
+                    templateData = EmailWelcomeId.get(userName);
+                    break;
+                case "pt":
+                    templateData = EmailWelcomePt.get(userName);
+                    break;
+                default:
+                    templateData = EmailWelcomeEn.get(userName);
+                    break;
+            }
+
+            String subject = templateData.get("subject");
+            String htmlBody = templateData.get("body");
+            String textBody = htmlBody.replaceAll("\\<.*?\\>", ""); // crude HTML → text
+
+            // Send signed email
+            MailService mailService = CdiUtil.bean(MailService.class);
+            boolean sent = mailService.sendMailSigned(
+                    smtpConfig.getFromEmailAddress(),
+                    smtpConfig.getFromName(),
+                    to,
+                    null,
+                    subject,
+                    textBody,
+                    htmlBody);
+
+            if (sent) {
+                LogUtils.log("Localized username update email sent successfully to %", to);
+            } else {
+                LogUtils.log("Failed to send localized username update email to %", to);
+            }
+
+            return sent;
+
+        } catch (Exception e) {
+            LogUtils.log("Failed to send username update email: %", e.getMessage());
+            return false;
+        }
+    }
+
     private SmtpConfiguration getSmtpConfiguration() {
         ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
         SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();

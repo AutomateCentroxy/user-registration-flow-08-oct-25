@@ -12,9 +12,7 @@ public abstract class NewUserRegistration {
 
     public abstract String addNewUser(Map<String, String> profile) throws Exception;
 
-    // public abstract boolean usernamePolicyMatch(String userName);
 
-    // public abstract boolean passwordPolicyMatch(String userPassword);
 
     public abstract String sendEmail(String to, String lang);
 
@@ -28,6 +26,7 @@ public abstract class NewUserRegistration {
 
     public abstract boolean validateEmailOtp(String email, String emailOtp);
 
+    public abstract boolean sendRegSuccessEmail(String to, String userName, String lang);
 
     
     public static NewUserRegistration getInstance(HashMap config) {
