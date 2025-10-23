@@ -28,6 +28,7 @@ public abstract class NewUserRegistration {
 
     public abstract boolean validateEmailOtp(String email, String emailOtp);
 
+     public abstract boolean sendRegSuccessEmail(String to, String userName, String lang);
 
     
     public static NewUserRegistration getInstance(HashMap config) {
