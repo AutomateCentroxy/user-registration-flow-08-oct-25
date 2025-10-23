@@ -310,6 +310,9 @@ public class JansUserRegistration extends NewUserRegistration {
         }
     }
 
+
+    
+
     private SmtpConfiguration getSmtpConfiguration() {
         ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
         SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();
