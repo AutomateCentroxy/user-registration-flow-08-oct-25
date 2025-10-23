@@ -26,7 +26,7 @@ class EmailWelcomePt {
                 <p><strong>Detalhes da sua conta:</strong></p>
                 <div style="text-align:center;margin:30px 0;">
                   <div style="display:inline-block;background-color:#f5f5f5;color:#AD9269;font-size:28px;font-weight:600;letter-spacing:2px;padding:10px 20px;border-radius:4px;">
-                    """ + username + """
+                    """ + userName + """
                   </div>
                 </div>
 
