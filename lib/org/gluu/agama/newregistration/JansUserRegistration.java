@@ -311,7 +311,7 @@ public class JansUserRegistration extends NewUserRegistration {
     }
 
 
-    public boolean sendRegSuccessEmail(String to, String userName, String lang) {
+    public static sendRegSuccessEmail(String to, String userName, String lang) {
         try {
             // Fetch SMTP configuration
             ConfigurationService configService = CdiUtil.bean(ConfigurationService.class);
